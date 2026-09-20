@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 46 - Login Form</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        .login-box {
+            width: 320px;
+            margin: auto;
+            background: #102a47;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #ffe082;
+        }
+
+        @media (max-width: 500px) {
+            .login-box {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Login Form</h1>
+
+    <div class="login-box">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <div id="message"></div>
+
+    </div>
+
+    <script>
+        function login() {
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+
+                document.getElementById("message").innerHTML =
+                    "Please enter email and password.";
+
+                return;
+            }
+
+            if (!email.includes("@")) {
+
+                document.getElementById("message").innerHTML =
+                    "Please enter a valid email.";
+
+                return;
+            }
+
+            if (password.length < 6) {
+
+                document.getElementById("message").innerHTML =
+                    "Password must contain at least 6 characters.";
+
+                return;
+            }
+
+            document.getElementById("message").innerHTML =
+                "Login validation successful!";
+        }
+    </script>
+
+</body>
+</html>

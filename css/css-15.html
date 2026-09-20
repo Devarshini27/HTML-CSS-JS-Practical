@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 15 - Overflow</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(0,110,255,.45), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0,70,220,.35), transparent 38%),
+        linear-gradient(135deg, #061b4f, #063a91, #075ee8);
+    padding: 100px 20px 50px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(15px);
+    padding: 12px 25px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    color: #70b7ff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.card {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    backdrop-filter: blur(15px);
+}
+
+.demo {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 250px;
+    height: 150px;
+    padding: 20px;
+    background: #1677ff;
+    border-radius: 15px;
+}
+
+.hidden-overflow {
+    overflow: hidden;
+}
+
+.scroll-overflow {
+    overflow: auto;
+}
+
+.x-overflow {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.long-content {
+    width: 600px;
+}
+
+code {
+    color: #8dccff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #1677ff;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">CSS Programs</a>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="badge">CSS 15 / OVERFLOW</div>
+        <h1>CSS Overflow</h1>
+        <p>Managing content that exceeds an element's size.</p>
+    </div>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>To demonstrate overflow, overflow-x and overflow-y properties.</p>
+    </div>
+
+    <div class="card">
+        <h2>Working Output</h2>
+
+        <div class="demo">
+
+            <div class="box hidden-overflow">
+                <strong>overflow: hidden</strong>
+                <p>Extra content is hidden when it exceeds the box.</p>
+            </div>
+
+            <div class="box scroll-overflow">
+                <strong>overflow: auto</strong>
+                <p>This box automatically provides scrolling when required. This is additional content.</p>
+            </div>
+
+            <div class="box x-overflow">
+                <strong>overflow-x: auto</strong>
+                <div class="long-content">
+                    Horizontal scrolling content →
+                    CSS Overflow Demonstration
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Source Code</h2>
+        <p><code>overflow: hidden;</code></p>
+        <p><code>overflow: auto;</code></p>
+        <p><code>overflow-x: auto;</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Concepts</h2>
+        <p>overflow, overflow-x, overflow-y, scrolling</p>
+    </div>
+
+    <a class="back" href="index.html">← Back to CSS Programs</a>
+
+</div>
+
+</body>
+</html>

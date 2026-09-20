@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 22 - Change Text</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #text {
+            font-size: 22px;
+            color: #ffe082;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Change Text Using JavaScript</h1>
+
+    <p id="text">This is the original text.</p>
+
+    <button onclick="changeText()">Change Text</button>
+
+    <script>
+        function changeText() {
+            document.getElementById("text").innerHTML =
+                "The text has been changed using JavaScript!";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 02 - Arithmetic Operations</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            margin: 8px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 18px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 02</h1>
+    <p>Perform Arithmetic Operations</p>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="output"></div>
+
+    <script>
+        function calculate() {
+
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            document.getElementById("output").innerHTML =
+                "Addition = " + (a + b) + "<br>" +
+                "Subtraction = " + (a - b) + "<br>" +
+                "Multiplication = " + (a * b) + "<br>" +
+                "Division = " + (b !== 0 ? a / b : "Cannot divide by zero");
+        }
+    </script>
+
+</body>
+</html>

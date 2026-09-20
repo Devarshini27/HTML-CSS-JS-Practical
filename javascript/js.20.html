@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 20 - Date and Math Objects</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #output {
+            margin: 25px auto;
+            max-width: 600px;
+            padding: 20px;
+            color: #ffe082;
+            background: #020914;
+            border-radius: 12px;
+            font-size: 18px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 20</h1>
+    <p>Demonstrate Date and Math Objects</p>
+
+    <button onclick="showObjects()">Run Program</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function showObjects() {
+
+            let date = new Date();
+
+            document.getElementById("output").innerHTML =
+                "Current Date: " + date.toLocaleDateString() + "<br>" +
+                "Current Time: " + date.toLocaleTimeString() + "<br>" +
+                "PI = " + Math.PI + "<br>" +
+                "Square Root of 64 = " + Math.sqrt(64) + "<br>" +
+                "Power 2³ = " + Math.pow(2, 3) + "<br>" +
+                "Random Number = " + Math.random().toFixed(4);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 17 - Shadows</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(0,110,255,.45), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0,70,220,.35), transparent 38%),
+        linear-gradient(135deg, #061b4f, #063a91, #075ee8);
+    padding: 100px 20px 50px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(15px);
+    padding: 12px 25px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+}
+
+.badge {
+    color: #70b7ff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px 0 35px;
+    text-shadow: 0 0 20px rgba(120,190,255,.9);
+}
+
+.card {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+.demo {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.shadow-box {
+    width: 250px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #126be8;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+}
+
+.text-shadow {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0,0,0,.7);
+}
+
+code {
+    color: #8dccff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #1677ff;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">CSS Programs</a>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="badge">CSS 17 / SHADOWS</div>
+        <h1>Box & Text Shadows</h1>
+        <p>Adding depth and glowing effects using CSS shadows.</p>
+    </div>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>To demonstrate box-shadow and text-shadow properties.</p>
+    </div>
+
+    <div class="card">
+        <h2>Working Output</h2>
+
+        <div class="demo">
+            <div class="shadow-box">
+                Box Shadow
+            </div>
+
+            <div class="shadow-box text-shadow">
+                Text Shadow
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Source Code</h2>
+        <p><code>box-shadow: 0 15px 35px rgba(0,0,0,.5);</code></p>
+        <p><code>text-shadow: 4px 4px 8px rgba(0,0,0,.7);</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Concepts</h2>
+        <p>box-shadow, text-shadow, blur, offset</p>
+    </div>
+
+    <a class="back" href="index.html">← Back to CSS Programs</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 89 | SaaS Dashboard</title>
+    <style>
+        :root { --navy: #08295f; --blue: #1257c7; --line: #d8e3f2; --text: #17243b; --muted: #62718a; --green: #168866; }
+        * { box-sizing: border-box; }
+        body { margin: 0; color: var(--text); background: #f7faff; font: 14px Arial, sans-serif; }
+        .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+        .sidebar { padding: 24px 15px; color: white; background: var(--navy); }
+        .brand { display: block; margin: 0 10px 30px; color: white; text-decoration: none; font-weight: 800; letter-spacing: .08em; }
+        .sidebar a { display: block; padding: 11px 12px; border-radius: 7px; color: #cbd9ed; text-decoration: none; }
+        .sidebar a:hover, .sidebar a.active { color: white; background: #17417f; }
+        .main { min-width: 0; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; border-bottom: 1px solid var(--line); background: white; }
+        .avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: var(--blue); background: #dce8ff; font-weight: 800; }
+        .content { width: min(1150px, 90%); margin: auto; padding: 35px 0 60px; }
+        .eyebrow { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+        h1 { margin: 10px 0 7px; font-size: clamp(32px, 6vw, 58px); line-height: .95; }
+        .muted { color: var(--muted); }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0; }
+        .card { padding: 20px; border: 1px solid var(--line); border-radius: 11px; background: white; box-shadow: 0 8px 22px rgba(17,42,85,.05); }
+        .metric strong { display: block; margin: 7px 0; font-size: 27px; }
+        .positive { color: var(--green); font-weight: 700; }
+        .dashboard { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; }
+        .chart { display: flex; align-items: end; gap: 10px; height: 190px; padding-top: 24px; }
+        .bar { flex: 1; height: var(--height); border-radius: 5px 5px 0 0; background: #9eb8ff; }
+        .bar:nth-child(2n) { background: var(--blue); }
+        h2 { margin: 0 0 15px; font-size: 17px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+        th { color: var(--muted); font-size: 12px; }
+        @media (max-width: 800px) { .app { display: block; } .sidebar { display: flex; gap: 8px; overflow-x: auto; padding: 14px; } .brand { margin: 10px; white-space: nowrap; } .sidebar a { white-space: nowrap; } .metrics { grid-template-columns: repeat(2, 1fr); } .dashboard { grid-template-columns: 1fr; } }
+        @media (max-width: 450px) { .metrics { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <a class="brand" href="index.html">NORTHSTAR / UI</a>
+            <a class="active" href="#overview">Overview</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#reports">Reports</a>
+            <a href="#settings">Settings</a>
+            <a href="index.html">CSS Programs</a>
+        </aside>
+        <div class="main">
+            <header class="topbar"><strong>Workspace dashboard</strong><span class="avatar">DL</span></header>
+            <main class="content" id="overview">
+                <div class="eyebrow">CSS PROGRAM 89</div>
+                <h1>SaaS dashboard</h1>
+                <p class="muted">A practical dashboard layout combines navigation, metrics, a chart, and a recent activity table.</p>
+                <section class="metrics">
+                    <article class="card metric"><span class="muted">Monthly revenue</span><strong>$84.2k</strong><span class="positive">+12.4%</span></article>
+                    <article class="card metric"><span class="muted">Active users</span><strong>12,480</strong><span class="positive">+8.1%</span></article>
+                    <article class="card metric"><span class="muted">Conversion</span><strong>68.9%</strong><span class="positive">+4.8%</span></article>
+                    <article class="card metric"><span class="muted">Churn risk</span><strong>3.2%</strong><span class="positive">Healthy</span></article>
+                </section>
+                <section class="dashboard">
+                    <article class="card"><h2>Weekly usage</h2><div class="chart"><span class="bar" style="--height:38%"></span><span class="bar" style="--height:61%"></span><span class="bar" style="--height:48%"></span><span class="bar" style="--height:76%"></span><span class="bar" style="--height:58%"></span><span class="bar" style="--height:92%"></span><span class="bar" style="--height:80%"></span></div></article>
+                    <article class="card"><h2>Recent activity</h2><table><tr><th>EVENT</th><th>TIME</th></tr><tr><td>Report shared</td><td>8m</td></tr><tr><td>Data synced</td><td>1h</td></tr><tr><td>New teammate</td><td>3h</td></tr></table></article>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 18 - Array Methods</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            width: 350px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 18px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 18</h1>
+    <p>Demonstrate Array Methods</p>
+
+    <input
+        type="text"
+        id="array"
+        value="1,2,3,4,5"
+    >
+
+    <button onclick="showMethods()">Run</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function showMethods() {
+
+            let array = document.getElementById("array")
+                .value
+                .split(",")
+                .map(Number);
+
+            let doubled = array.map(x => x * 2);
+
+            let filtered = array.filter(x => x > 2);
+
+            let sum = array.reduce((total, x) => total + x, 0);
+
+            document.getElementById("output").innerHTML =
+                "Original = " + array.join(", ") + "<br>" +
+                "Map × 2 = " + doubled.join(", ") + "<br>" +
+                "Filter > 2 = " + filtered.join(", ") + "<br>" +
+                "Reduce Sum = " + sum;
+        }
+
+    </script>
+
+</body>
+</html>

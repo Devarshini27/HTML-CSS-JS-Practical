@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 42 - Callbacks Promises Async</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #output {
+            color: #ffe082;
+            font-size: 20px;
+            margin-top: 25px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Callbacks, Promises & Async/Await</h1>
+
+    <button onclick="runExample()">Run Examples</button>
+
+    <div id="output"></div>
+
+    <script>
+        function callbackExample(callback) {
+            setTimeout(function() {
+                callback("Callback executed successfully.");
+            }, 1000);
+        }
+
+        function promiseExample() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Promise resolved successfully.");
+                }, 1000);
+            });
+        }
+
+        async function asyncExample() {
+            let result = await promiseExample();
+            return result;
+        }
+
+        function runExample() {
+
+            let output = document.getElementById("output");
+
+            output.innerHTML = "Running examples...";
+
+            callbackExample(function(message) {
+
+                output.innerHTML +=
+                    "<br>" + message;
+
+                asyncExample().then(function(result) {
+
+                    output.innerHTML +=
+                        "<br>" + result;
+
+                });
+
+            });
+        }
+    </script>
+
+</body>
+</html>

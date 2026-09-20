@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 59 - Element Frequency</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            width: 300px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Frequency of Each Element</h1>
+
+    <input type="text" id="array"
+           placeholder="1, 2, 2, 3, 3, 3">
+
+    <br>
+
+    <button onclick="findFrequency()">Find Frequency</button>
+
+    <div id="output"></div>
+
+    <script>
+        function findFrequency() {
+
+            let array = document.getElementById("array").value
+                .split(",")
+                .map(Number);
+
+            let frequency = {};
+
+            array.forEach(function(element) {
+
+                if (frequency[element]) {
+                    frequency[element]++;
+                } else {
+                    frequency[element] = 1;
+                }
+
+            });
+
+            let output = "";
+
+            for (let element in frequency) {
+                output += element + " : " +
+                          frequency[element] + " time(s)<br>";
+            }
+
+            document.getElementById("output").innerHTML =
+                output;
+        }
+    </script>
+
+</body>
+</html>

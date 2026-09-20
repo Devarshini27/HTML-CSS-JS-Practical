@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 40 - Classes and Objects</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        #output {
+            color: #ffe082;
+            font-size: 22px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Classes and Objects</h1>
+
+    <div id="output"></div>
+
+    <script>
+        class Student {
+
+            constructor(name, age, course) {
+                this.name = name;
+                this.age = age;
+                this.course = course;
+            }
+
+            display() {
+                return `
+                    Name: ${this.name}<br>
+                    Age: ${this.age}<br>
+                    Course: ${this.course}
+                `;
+            }
+        }
+
+        let student1 = new Student(
+            "Devarshini",
+            18,
+            "B.Tech CSE"
+        );
+
+        document.getElementById("output").innerHTML =
+            student1.display();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 18 - Variables</title>
+
+<style>
+:root {
+    --primary: #1677ff;
+    --secondary: #70b7ff;
+    --background: #061b4f;
+    --card: rgba(255,255,255,.1);
+    --radius: 20px;
+    --spacing: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(0,110,255,.45), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0,70,220,.35), transparent 38%),
+        linear-gradient(135deg, var(--background), #063a91, #075ee8);
+    padding: 100px 20px 50px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    padding: 12px 25px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    color: var(--secondary);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin: var(--spacing) 0;
+    backdrop-filter: blur(15px);
+}
+
+.demo {
+    display: flex;
+    gap: var(--spacing);
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 220px;
+    padding: 35px;
+    text-align: center;
+    background: var(--primary);
+    border-radius: var(--radius);
+}
+
+code {
+    color: #8dccff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">CSS Programs</a>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="badge">CSS 18 / VARIABLES</div>
+        <h1>CSS Variables</h1>
+        <p>Using custom properties to create reusable styles.</p>
+    </div>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>To demonstrate CSS variables and custom properties.</p>
+    </div>
+
+    <div class="card">
+        <h2>Working Output</h2>
+
+        <div class="demo">
+            <div class="box">
+                Primary Color
+            </div>
+
+            <div class="box">
+                Reusable Variables
+            </div>
+
+            <div class="box">
+                Custom Properties
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Source Code</h2>
+        <p><code>--primary: #1677ff;</code></p>
+        <p><code>--radius: 20px;</code></p>
+        <p><code>background: var(--primary);</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Concepts</h2>
+        <p>CSS variables, custom properties, var()</p>
+    </div>
+
+    <a class="back" href="index.html">← Back to CSS Programs</a>
+
+</div>
+
+</body>
+</html>

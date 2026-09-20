@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CSS 04 | CSS Colors</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+min-height:100vh;color:white;
+background:
+radial-gradient(circle at 15% 15%,rgba(0,110,255,.45),transparent 32%),
+radial-gradient(circle at 85% 75%,rgba(0,70,220,.35),transparent 38%),
+linear-gradient(135deg,#061b4f,#063a91,#075ee8);
+padding-bottom:60px;
+}
+
+nav{
+position:sticky;top:0;z-index:10;
+padding:18px 7%;display:flex;
+justify-content:space-between;align-items:center;
+background:rgba(3,18,55,.78);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.15)
+}
+.logo{font-size:20px;font-weight:bold}
+.logo span{color:#58a6ff}
+nav a,.btn{
+color:white;text-decoration:none;padding:11px 20px;
+border-radius:25px;background:rgba(255,255,255,.09)
+}
+.container{width:90%;max-width:1100px;margin:auto}
+.hero{text-align:center;padding:75px 20px 45px}
+.tag{display:inline-block;padding:8px 18px;border-radius:25px;
+background:rgba(255,255,255,.1);color:#70b7ff;
+letter-spacing:2px;margin-bottom:20px}
+h1{font-size:clamp(42px,8vw,80px);
+background:linear-gradient(90deg,#fff,#65b7ff);
+background-clip: text;
+-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin:15px auto;max-width:750px;color:#d8e8ff;line-height:1.7}
+
+.card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.16);
+border-radius:25px;padding:30px;margin-bottom:28px;
+backdrop-filter:blur(15px)
+}
+.card h2{color:#65b7ff;margin-bottom:15px}
+.card p{line-height:1.7;color:#e4efff}
+
+.colors{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;margin-top:20px
+}
+.color-box{
+height:140px;border-radius:20px;
+display:flex;align-items:center;justify-content:center;
+font-weight:bold;text-align:center;
+border:2px solid rgba(255,255,255,.3)
+}
+.red{background:#ef4444}
+.green{background:#22c55e}
+.blue{background:#3b82f6}
+.purple{background:#8b5cf6}
+.orange{background:#f97316}
+.pink{background:#ec4899}
+
+pre{overflow-x:auto;background:#031333;padding:25px;border-radius:18px;margin-top:20px}
+code{color:#dcecff;line-height:1.7}
+.concepts{display:flex;flex-wrap:wrap;gap:10px}
+.concept{padding:8px 15px;border-radius:20px;background:rgba(0,110,255,.25)}
+.navigation{display:flex;justify-content:space-between;gap:15px;margin-top:35px}
+.btn{background:linear-gradient(135deg,#0878ff,#0044bb)}
+footer{text-align:center;padding:40px 20px 10px;color:#a9c9ef}
+@media(max-width:600px){.navigation{flex-direction:column}.btn{text-align:center}}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">DLA <span>| CSS 04</span></div>
+<a href="index.html">← CSS Programs</a>
+</nav>
+
+<section class="hero">
+<div class="tag">CSS PROGRAM 04</div>
+<h1>CSS Colors</h1>
+<p>Create a webpage using CSS colors for text, backgrounds, borders, and UI elements.</p>
+</section>
+
+<main class="container">
+
+<section class="card">
+<h2>Aim</h2>
+<p>To demonstrate the use of CSS colors in text, backgrounds, borders, and user interface elements.</p>
+</section>
+
+<section class="card">
+<h2>Working Output</h2>
+
+<div class="colors">
+<div class="color-box red">Red Background</div>
+<div class="color-box green">Green Background</div>
+<div class="color-box blue">Blue Background</div>
+<div class="color-box purple">Purple Background</div>
+<div class="color-box orange">Orange Background</div>
+<div class="color-box pink">Pink Background</div>
+</div>
+
+</section>
+
+<section class="card">
+<h2>Source Code</h2>
+
+<pre><code>.red {
+    background: #ef4444;
+}
+
+.green {
+    background: #22c55e;
+}
+
+.blue {
+    background: #3b82f6;
+}
+
+.purple {
+    background: #8b5cf6;
+}
+
+.orange {
+    background: #f97316;
+}
+
+.pink {
+    background: #ec4899;
+}</code></pre>
+</section>
+
+<section class="card">
+<h2>Concepts Used</h2>
+<div class="concepts">
+<span class="concept">Color Names</span>
+<span class="concept">HEX Colors</span>
+<span class="concept">Background Color</span>
+<span class="concept">Text Color</span>
+<span class="concept">Border Color</span>
+</div>
+</section>
+
+<div class="navigation">
+<a href="css-03.html" class="btn">← CSS 03</a>
+<a href="css-05.html" class="btn">CSS 05 →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Devarshini Lakshmi Akshaya</p>
+<p>HTML • CSS • JavaScript Practical Assignment</p>
+</footer>
+
+</body>
+</html>

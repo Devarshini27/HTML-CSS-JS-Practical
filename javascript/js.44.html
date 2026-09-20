@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 44 - Display API Data</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .user {
+            background: #102a47;
+            width: 350px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            color: #ffe082;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic API Data</h1>
+
+    <button onclick="loadUsers()">Load Users</button>
+
+    <div id="users"></div>
+
+    <script>
+        function loadUsers() {
+
+            fetch("https://jsonplaceholder.typicode.com/users")
+                .then(response => response.json())
+                .then(data => {
+
+                    let output = "";
+
+                    data.forEach(function(user) {
+
+                        output += `
+                            <div class="user">
+                                <h2>${user.name}</h2>
+                                <p>Email: ${user.email}</p>
+                                <p>City: ${user.address.city}</p>
+                            </div>
+                        `;
+
+                    });
+
+                    document.getElementById("users").innerHTML =
+                        output;
+                })
+                .catch(error => {
+
+                    document.getElementById("users").innerHTML =
+                        "Unable to load data.";
+
+                });
+        }
+    </script>
+
+</body>
+</html>

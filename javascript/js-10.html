@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 10 - Reverse Number</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 10</h1>
+    <p>Reverse a Number</p>
+
+    <input type="number" id="number" placeholder="Enter number">
+
+    <button onclick="reverseNumber()">Reverse</button>
+
+    <div id="output"></div>
+
+    <script>
+        function reverseNumber() {
+
+            let number = document.getElementById("number").value;
+
+            let reverse = number
+                .split("")
+                .reverse()
+                .join("");
+
+            document.getElementById("output").innerHTML =
+                "Reversed Number = " + reverse;
+        }
+    </script>
+
+</body>
+</html>

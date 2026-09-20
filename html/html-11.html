@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML-11 | Internal and External CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="html-11-style.css">
+
+    <!-- Internal CSS -->
+    <style>
+
+        .internal {
+            color: #ffb347;
+            font-size: 32px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <a href="html-10.html">← Previous</a>
+        <a href="index.html">HTML Programs</a>
+        <a href="../index.html">⌂ Home</a>
+        <a href="html-12.html">Next →</a>
+    </nav>
+
+    <div class="tag">HTML PROGRAM 11 / 15</div>
+
+    <h1>Internal & External CSS</h1>
+
+    <div class="card">
+
+        <h2>Aim</h2>
+
+        <p>
+            To create a webpage with internal and external
+            CSS styling.
+        </p>
+
+    </div>
+
+    <h2>Working Output</h2>
+
+    <div class="output">
+
+        <h2 class="internal">
+            This heading uses Internal CSS
+        </h2>
+
+        <p class="external">
+            This paragraph uses External CSS.
+        </p>
+
+    </div>
+
+    <h2>Source Code</h2>
+
+    <pre><code>&lt;link rel="stylesheet"
+      href="html-11-style.css"&gt;
+
+&lt;style&gt;
+
+.internal {
+    color: orange;
+    font-size: 30px;
+}
+
+&lt;/style&gt;
+
+&lt;h1 class="internal"&gt;
+    This uses Internal CSS
+&lt;/h1&gt;
+
+&lt;p class="external"&gt;
+    This paragraph uses External CSS.
+&lt;/p&gt;</code></pre>
+
+    <div class="card">
+
+        <h2>Concepts Used</h2>
+
+        <p>• Internal CSS</p>
+        <p>• External CSS</p>
+        <p>• class selectors</p>
+        <p>• link element</p>
+
+    </div>
+
+    <footer>
+        Devarshini Lakshmi Akshaya
+    </footer>
+
+</div>
+
+</body>
+</html>

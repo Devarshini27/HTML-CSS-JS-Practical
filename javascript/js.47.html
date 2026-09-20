@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 47 - Interactive Webpage</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        header {
+            padding: 30px;
+            background: #102a47;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            color: #ffe082;
+            font-size: 22px;
+            margin-top: 25px;
+        }
+
+        footer {
+            padding: 20px;
+            background: #102a47;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Interactive Webpage</h1>
+        <p>HTML + CSS + JavaScript</p>
+    </header>
+
+    <section>
+
+        <h2>Welcome!</h2>
+
+        <p id="message">
+            Click the button to interact with this page.
+        </p>
+
+        <button onclick="changeMessage()">
+            Click Me
+        </button>
+
+    </section>
+
+    <footer>
+        JavaScript Practical Program 47
+    </footer>
+
+    <script>
+        function changeMessage() {
+
+            document.getElementById("message").innerHTML =
+                "Welcome to my interactive webpage!";
+
+            document.body.style.background =
+                "#102a47";
+        }
+    </script>
+
+</body>
+</html>

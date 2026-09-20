@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML-05 | Student Registration Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 10%, #ff8a24 0%, transparent 28%),
+                radial-gradient(circle at 85% 25%, #ffb347 0%, transparent 25%),
+                radial-gradient(circle at 50% 100%, #ff6a00 0%, transparent 30%),
+                linear-gradient(135deg, #241006, #120b07 45%, #1c0b02);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 0 60px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid #ff8a2460;
+            border-radius: 30px;
+            background: #ff8a2418;
+        }
+
+        nav a:hover {
+            color: #ffb347;
+            border-color: #ff8a24;
+        }
+
+        .tag {
+            color: #ffb347;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(40px, 7vw, 70px);
+            margin: 15px 0 30px;
+        }
+
+        h2 {
+            color: #ff9d38;
+        }
+
+        .card,
+        .output {
+            background: rgba(255, 138, 36, 0.12);
+            border: 1px solid #ff8a2460;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(15px);
+        }
+
+        .output {
+            background: rgba(35, 15, 3, 0.75);
+        }
+
+        form {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #ffd49d;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-top: 7px;
+            border-radius: 10px;
+            border: 1px solid #ff8a2460;
+            background: #120a05;
+            color: white;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .button {
+            width: auto;
+            padding: 12px 25px;
+            background: #ff8a24;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        pre {
+            background: #080402;
+            border: 1px solid #ff8a2460;
+            border-radius: 18px;
+            padding: 22px;
+            overflow-x: auto;
+            color: #ffd49d;
+        }
+
+        footer {
+            text-align: center;
+            color: #ffd49d;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <a href="html-04.html">← Previous</a>
+        <a href="index.html">HTML Programs</a>
+        <a href="../index.html">⌂ Home</a>
+        <a href="html-06.html">Next →</a>
+    </nav>
+
+    <div class="tag">HTML PROGRAM 05 / 15</div>
+
+    <h1>Student Registration Form</h1>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>
+            To create a student registration form using
+            HTML form elements.
+        </p>
+    </div>
+
+    <h2>Working Output</h2>
+
+    <div class="output">
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Phone</label>
+            <input type="tel" placeholder="Enter phone number">
+
+            <label>Date of Birth</label>
+            <input type="date">
+
+            <label>Department</label>
+
+            <select>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+            </select>
+
+            <label>Gender</label>
+
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+
+            <label>Address</label>
+
+            <textarea
+                rows="4"
+                placeholder="Enter your address"></textarea>
+
+            <br><br>
+
+            <input class="button" type="submit" value="Register">
+
+            <input class="button" type="reset" value="Reset">
+
+        </form>
+
+    </div>
+
+    <h2>Source Code</h2>
+
+    <pre><code>&lt;form&gt;
+
+    &lt;label&gt;Full Name:&lt;/label&gt;
+    &lt;input type="text" name="name"&gt;
+
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email" name="email"&gt;
+
+    &lt;label&gt;Phone:&lt;/label&gt;
+    &lt;input type="tel" name="phone"&gt;
+
+    &lt;label&gt;Date of Birth:&lt;/label&gt;
+    &lt;input type="date" name="dob"&gt;
+
+    &lt;label&gt;Department:&lt;/label&gt;
+
+    &lt;select name="department"&gt;
+        &lt;option&gt;CSE&lt;/option&gt;
+        &lt;option&gt;ECE&lt;/option&gt;
+        &lt;option&gt;EEE&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;label&gt;Gender:&lt;/label&gt;
+
+    &lt;input type="radio"
+           name="gender"
+           value="male"&gt;
+    Male
+
+    &lt;input type="radio"
+           name="gender"
+           value="female"&gt;
+    Female
+
+    &lt;label&gt;Address:&lt;/label&gt;
+
+    &lt;textarea rows="4"
+              cols="30"&gt;
+    &lt;/textarea&gt;
+
+    &lt;input type="submit"
+           value="Register"&gt;
+
+    &lt;input type="reset"
+           value="Reset"&gt;
+
+&lt;/form&gt;</code></pre>
+
+    <div class="card">
+        <h2>Concepts Used</h2>
+        <p>• form</p>
+        <p>• input elements</p>
+        <p>• radio buttons</p>
+        <p>• select and option</p>
+        <p>• textarea</p>
+        <p>• submit and reset buttons</p>
+    </div>
+
+    <footer>
+        Devarshini Lakshmi Akshaya
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,806 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Devarshini Lakshmi Akshaya | Web Development Lab</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background: #080b2b;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(5, 8, 35, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-symbol {
+            font-size: 28px;
+            font-weight: bold;
+            color: #a855f7;
+        }
+
+        .logo-name {
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d946ef;
+        }
+
+        .home-btn {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            padding: 10px 22px;
+            border-radius: 30px;
+        }
+
+
+        /* =========================
+           INTRO SECTION
+        ========================= */
+
+        .intro {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 120px 9% 70px;
+
+            background:
+                radial-gradient(circle at 15% 20%, #3b146e 0, transparent 25%),
+                radial-gradient(circle at 90% 70%, #1e40af 0, transparent 30%),
+                #080b2b;
+        }
+
+        .intro-text {
+            width: 52%;
+        }
+
+        .hello {
+            font-size: 28px;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .hello span {
+            color: #f472b6;
+        }
+
+        .intro h1 {
+            font-size: clamp(45px, 6vw, 80px);
+            line-height: 1;
+            margin-bottom: 25px;
+
+            background: linear-gradient(
+                90deg,
+                #38bdf8,
+                #a855f7,
+                #ec4899
+            );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .intro h2 {
+            font-size: 26px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .intro h2 span {
+            color: #38bdf8;
+        }
+
+        .intro p {
+            max-width: 600px;
+            line-height: 1.7;
+            font-size: 17px;
+            color: #dbe4ff;
+        }
+
+        .explore-btn {
+            display: inline-block;
+
+            margin-top: 30px;
+            padding: 14px 25px;
+
+            border: 2px solid #d946ef;
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            background: #d946ef;
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           INTRO IMAGE
+        ========================= */
+
+        .intro-image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .intro-image img {
+            width: 90%;
+            max-width: 450px;
+
+            border-radius: 50%;
+
+            border: 3px solid #c084fc;
+
+            box-shadow:
+                0 0 30px #a855f7,
+                0 0 80px rgba(168,85,247,0.4);
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        .section {
+            min-height: 75vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 80px 9%;
+
+            overflow: hidden;
+        }
+
+        .section-text {
+            width: 48%;
+        }
+
+        .section-number {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 550px;
+        }
+
+        .section-btn {
+            display: inline-block;
+
+            margin-top: 25px;
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .section-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+
+        /* =========================
+           SECTION IMAGE
+        ========================= */
+
+        .section-image {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-image img {
+            width: 100%;
+            max-width: 550px;
+
+            border-radius: 25px;
+
+            transition: 0.5s;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .section-image img:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+
+        /* =========================
+           HTML SECTION
+        ========================= */
+
+        .html-section {
+            background:
+                radial-gradient(circle at 80% 40%, #ff8c00 0, transparent 25%),
+                linear-gradient(135deg, #8f2500, #ff5a00);
+        }
+
+        .html-section .section-number {
+            color: #ffd2a8;
+        }
+
+        .html-section h2 {
+            color: #fff1e6;
+        }
+
+        .html-section p {
+            color: #fff4e8;
+        }
+
+        .html-btn {
+            background: #ff6a00;
+            border: 2px solid white;
+        }
+
+
+        /* =========================
+           CSS SECTION
+        ========================= */
+
+        .css-section {
+            background:
+                radial-gradient(circle at 80% 40%, #168cff 0, transparent 25%),
+                linear-gradient(135deg, #062c85, #0757d9);
+        }
+
+        .css-section .section-number {
+            color: #8ed0ff;
+        }
+
+        .css-section h2 {
+            color: #d8efff;
+        }
+
+        .css-section p {
+            color: #e4f3ff;
+        }
+
+        .css-btn {
+            background: #287df0;
+            border: 2px solid white;
+        }
+
+
+        /* =========================
+           JAVASCRIPT SECTION
+        ========================= */
+
+        .js-section {
+            background:
+                radial-gradient(circle at 80% 40%, #ffcf33 0, transparent 25%),
+                linear-gradient(135deg, #6b4800, #b77b00);
+        }
+
+        .js-section .section-number {
+            color: #ffe68a;
+        }
+
+        .js-section h2 {
+            color: #fff1a8;
+        }
+
+        .js-section p {
+            color: #fff8d5;
+        }
+
+        .js-btn {
+            background: #ffc928;
+            color: #241900;
+            border: 2px solid white;
+        }
+
+
+        /* =========================
+           FEATURE TAGS
+        ========================= */
+
+        .tags {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            position: absolute;
+            right: 5%;
+        }
+
+        .tags span {
+            padding: 10px 18px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+
+        /* =========================
+           ENDING SECTION
+        ========================= */
+
+        .ending {
+            min-height: 40vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(circle at 30% 50%, #312e81, transparent 35%),
+                radial-gradient(circle at 70% 50%, #581c87, transparent 35%),
+                #080b2b;
+        }
+
+        .ending h2 {
+            font-size: 50px;
+
+            background: linear-gradient(
+                90deg,
+                #38bdf8,
+                #c084fc,
+                #f472b6
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            margin-bottom: 20px;
+        }
+
+        .ending p {
+            color: #dbe4ff;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+
+            background: #05071e;
+
+            border-top: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            .intro,
+            .section {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .intro-text,
+            .section-text {
+                width: 100%;
+            }
+
+            .intro-image,
+            .section-image {
+                width: 80%;
+            }
+
+            .section h2 {
+                font-size: 50px;
+            }
+
+            .tags {
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .logo-name {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .home-btn {
+                padding: 8px 12px;
+            }
+
+            .intro {
+                padding-top: 110px;
+            }
+
+            .intro h1 {
+                font-size: 45px;
+            }
+
+            .section {
+                min-height: auto;
+                padding: 80px 7%;
+            }
+
+            .section h2 {
+                font-size: 45px;
+            }
+
+            .intro-image,
+            .section-image {
+                width: 95%;
+            }
+
+            .ending h2 {
+                font-size: 38px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            <div class="logo-symbol">DLA</div>
+
+            <div class="logo-name">
+                Devarshini Lakshmi Akshaya
+            </div>
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home" class="home-btn">Home</a>
+            </li>
+
+            <li>
+                <a href="#html">HTML</a>
+            </li>
+
+            <li>
+                <a href="#css">CSS</a>
+            </li>
+
+            <li>
+                <a href="#javascript">JavaScript</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         INTRODUCTION
+    ========================== -->
+
+    <section class="intro" id="home">
+
+        <div class="intro-text">
+
+            <div class="hello">
+                Hello, I'm <span>♥</span>
+            </div>
+
+            <h1>
+                Devarshini Lakshmi Akshaya
+            </h1>
+
+            <h2>
+                Welcome to my
+                <span>Web Development Lab</span>
+            </h2>
+
+            <p>
+                This website is a collection of my HTML, CSS and
+                JavaScript programs, experiments and interactive
+                projects created as part of my practical learning journey.
+            </p>
+
+            <a href="#html" class="explore-btn">
+                ↓ &nbsp; Scroll to Explore
+            </a>
+
+        </div>
+
+
+        <div class="intro-image">
+
+            <!-- Add your introduction picture here -->
+            <img src="assets/images/profile.png"
+                 alt="Devarshini">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HTML SECTION
+    ========================== -->
+
+    <section class="section html-section" id="html">
+
+        <div class="section-text">
+
+            <div class="section-number">
+                01 / Structure
+            </div>
+
+            <h2>HTML</h2>
+
+            <p>
+                HyperText Markup Language forms the structure
+                of a webpage. Explore my HTML experiments covering
+                headings, paragraphs, lists, tables, forms,
+                multimedia, semantic elements and more.
+            </p>
+
+            <a href="html/index.html"
+               class="section-btn html-btn">
+
+                Explore HTML Programs →
+            </a>
+
+        </div>
+
+
+        <div class="section-image">
+
+            <img src="assets/images/html.png"
+                 alt="HTML Web Development">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CSS SECTION
+    ========================== -->
+
+    <section class="section css-section" id="css">
+
+        <div class="section-text">
+
+            <div class="section-number">
+                02 / Design
+            </div>
+
+            <h2>CSS</h2>
+
+            <p>
+                Cascading Style Sheets bring webpages to life.
+                Explore my CSS experiments covering colors,
+                backgrounds, borders, layouts, responsive design,
+                transitions, transformations, animations and modern UI.
+            </p>
+
+            <a href="css/index.html"
+               class="section-btn css-btn">
+
+                Explore CSS Programs →
+            </a>
+
+        </div>
+
+
+        <div class="section-image">
+
+            <img src="assets/images/css.png"
+                 alt="CSS Web Design">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         JAVASCRIPT SECTION
+    ========================== -->
+
+    <section class="section js-section" id="javascript">
+
+        <div class="section-text">
+
+            <div class="section-number">
+                03 / Interaction
+            </div>
+
+            <h2>JavaScript</h2>
+
+            <p>
+                JavaScript adds logic and interactivity to webpages.
+                Explore programs involving variables, functions,
+                arrays, DOM manipulation, events, forms, validation
+                and interactive projects.
+            </p>
+
+            <a href="javascript/index.html"
+               class="section-btn js-btn">
+
+                Explore JavaScript Programs →
+            </a>
+
+        </div>
+
+
+        <div class="section-image">
+
+            <img src="assets/images/javascript.png"
+                 alt="JavaScript Programming">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ENDING
+    ========================== -->
+
+    <section class="ending">
+
+        <div>
+
+            <h2>
+                Learn. Build. Create.
+            </h2>
+
+            <p>
+                Every experiment is another step towards
+                becoming a better developer.
+            </p>
+
+            <br>
+
+            <p>
+                Thank you for exploring my practical portfolio.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Devarshini Lakshmi Akshaya
+        <br>
+
+        HTML • CSS • JavaScript Practical
+
+    </footer>
+
+
+</body>
+
+</html>
+```

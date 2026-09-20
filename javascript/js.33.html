@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 33 - Quiz</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        .question {
+            font-size: 22px;
+            color: #ffe082;
+            margin: 25px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Quiz</h1>
+
+    <div class="question">
+        What does HTML stand for?
+    </div>
+
+    <button onclick="checkAnswer('a')">
+        Hyper Text Markup Language
+    </button>
+
+    <button onclick="checkAnswer('b')">
+        High Text Machine Language
+    </button>
+
+    <button onclick="checkAnswer('c')">
+        Hyperlink Text Management Language
+    </button>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswer(answer) {
+
+            if (answer === "a") {
+                document.getElementById("result").innerHTML =
+                    "Correct Answer!";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Wrong Answer!";
+            }
+        }
+    </script>
+
+</body>
+</html>

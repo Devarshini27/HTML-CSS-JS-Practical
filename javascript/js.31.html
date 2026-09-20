@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 31 - Form Validation</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #ffe082;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Validate User Details</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Name">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="text" id="phone" placeholder="Phone Number">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <br>
+
+        <button type="submit">Validate</button>
+
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let password = document.getElementById("password").value;
+
+            if (name === "") {
+                showMessage("Please enter your name.");
+                return false;
+            }
+
+            if (email === "") {
+                showMessage("Please enter your email.");
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                showMessage("Phone number must contain 10 digits.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                showMessage("Password must contain at least 6 characters.");
+                return false;
+            }
+
+            showMessage("All details are valid!");
+            return false;
+        }
+
+        function showMessage(message) {
+            document.getElementById("message").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>

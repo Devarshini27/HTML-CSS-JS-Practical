@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 25 - Show Hide</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #message {
+            color: #ffe082;
+            font-size: 22px;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Show / Hide Element</h1>
+
+    <p id="message">This message can be shown or hidden.</p>
+
+    <button onclick="showElement()">Show</button>
+    <button onclick="hideElement()">Hide</button>
+
+    <script>
+        function showElement() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        function hideElement() {
+            document.getElementById("message").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

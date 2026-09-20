@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 38 - ES6 Features</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        #output {
+            color: #ffe082;
+            font-size: 20px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ES6 Features</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let name = "Devarshini";
+        const course = "B.Tech CSE";
+
+        let message = `Name: ${name}<br>Course: ${course}`;
+
+        let numbers = [10, 20, 30];
+
+        let [first, second, third] = numbers;
+
+        message += `<br><br>First: ${first}`;
+        message += `<br>Second: ${second}`;
+        message += `<br>Third: ${third}`;
+
+        document.getElementById("output").innerHTML = message;
+    </script>
+
+</body>
+</html>

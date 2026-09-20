@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 05 - Positive Negative Zero</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 05</h1>
+    <p>Check Positive, Negative or Zero</p>
+
+    <input type="number" id="number" placeholder="Enter number">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <div id="output"></div>
+
+    <script>
+        function checkNumber() {
+
+            let number = Number(document.getElementById("number").value);
+
+            if (number > 0) {
+                document.getElementById("output").innerHTML =
+                    "The number is Positive";
+            } 
+            else if (number < 0) {
+                document.getElementById("output").innerHTML =
+                    "The number is Negative";
+            } 
+            else {
+                document.getElementById("output").innerHTML =
+                    "The number is Zero";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Lab | Devarshini Lakshmi Akshaya</title>
+
+
+    <style>
+
+        /* =====================================
+           RESET
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: white;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(255, 119, 0, 0.35),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 85% 35%,
+                    rgba(255, 70, 0, 0.25),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(255, 170, 0, 0.18),
+                    transparent 30%
+                ),
+                #170904;
+        }
+
+
+        /* =====================================
+           ANIMATED BACKGROUND GLOW
+        ===================================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 102, 0, 0.12);
+
+            filter: blur(80px);
+
+            top: 20%;
+            left: -180px;
+
+            animation: moveGlow 9s infinite alternate;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 180, 0, 0.10);
+
+            filter: blur(90px);
+
+            bottom: -150px;
+            right: -100px;
+
+            animation: moveGlow2 11s infinite alternate;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        @keyframes moveGlow {
+
+            from {
+                transform: translateY(-50px);
+            }
+
+            to {
+                transform: translateY(180px);
+            }
+        }
+
+        @keyframes moveGlow2 {
+
+            from {
+                transform: translateX(-50px);
+            }
+
+            to {
+                transform: translateX(-200px);
+            }
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        nav {
+            position: fixed;
+
+            top: 18px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 90%;
+            max-width: 1200px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 14px 20px;
+
+            background: rgba(35, 12, 4, 0.72);
+
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(255, 170, 100, 0.18);
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.3);
+
+            z-index: 1000;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9d00,
+                    #ff4d00
+                );
+
+            box-shadow:
+                0 0 20px rgba(255, 102, 0, 0.5);
+
+            font-weight: bold;
+        }
+
+
+        .logo span {
+            color: #ff9d5c;
+        }
+
+
+        .home-button {
+            padding: 10px 20px;
+
+            border-radius: 25px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            transition: 0.3s;
+        }
+
+
+        .home-button:hover {
+            background: #ff6a00;
+
+            box-shadow:
+                0 0 25px rgba(255,106,0,0.5);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .hero {
+
+            min-height: 75vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                140px 20px
+                80px;
+
+            position: relative;
+        }
+
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+
+        .html-symbol {
+
+            width: 105px;
+            height: 105px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 30px;
+
+            font-size: 45px;
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9d00,
+                    #ff4500
+                );
+
+            box-shadow:
+                0 0 25px rgba(255, 102, 0, 0.5),
+                0 0 80px rgba(255, 102, 0, 0.15);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+
+        .eyebrow {
+
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 130, 50, 0.10);
+
+            border:
+                1px solid rgba(255, 150, 80, 0.25);
+
+            color: #ffb276;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(50px, 8vw, 90px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ffb066,
+                    #ff6500
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            letter-spacing: -3px;
+        }
+
+
+        .hero h1 span {
+            color: #ff7100;
+        }
+
+
+        .hero p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #e9cfc0;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           STATS
+        ===================================== */
+
+        .stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .stat {
+
+            padding: 15px 25px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .stat strong {
+
+            display: block;
+
+            font-size: 25px;
+
+            color: #ff9b55;
+
+            margin-bottom: 4px;
+        }
+
+
+        .stat small {
+            color: #cdb7ac;
+        }
+
+
+        /* =====================================
+           SECTION TITLE
+        ===================================== */
+
+        .program-heading {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin:
+                0 auto
+                45px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+        }
+
+
+        .program-heading h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .program-heading p {
+
+            color: #bda79b;
+        }
+
+
+        .heading-line {
+
+            width: 100px;
+            height: 4px;
+
+            margin-top: 15px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffb000,
+                    #ff4d00
+                );
+        }
+
+
+        /* =====================================
+           PROGRAM GRID
+        ===================================== */
+
+        .programs {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 24px;
+
+            padding-bottom: 90px;
+        }
+
+
+        /* =====================================
+           PROGRAM CARD
+        ===================================== */
+
+        .card {
+
+            position: relative;
+
+            min-height: 275px;
+
+            padding: 28px;
+
+            border-radius: 26px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.10),
+                    rgba(255,255,255,0.035)
+                );
+
+            border:
+                1px solid rgba(255,180,120,0.16);
+
+            backdrop-filter: blur(15px);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s,
+                border 0.4s,
+                box-shadow 0.4s;
+        }
+
+
+        /* glowing circle */
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            border-radius: 50%;
+
+            background:
+                #ff6500;
+
+            opacity: 0.10;
+
+            filter: blur(30px);
+
+            top: -50px;
+            right: -40px;
+
+            transition: 0.4s;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(255,145,70,0.55);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35),
+                0 0 30px rgba(255,90,0,0.12);
+        }
+
+
+        .card:hover::before {
+
+            transform:
+                scale(1.5);
+
+            opacity: 0.18;
+        }
+
+
+        /* =====================================
+           CARD NUMBER
+        ===================================== */
+
+        .number {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9d00,
+                    #ff4d00
+                );
+
+            box-shadow:
+                0 8px 20px rgba(255,90,0,0.25);
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+
+        .card h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+
+            color: #fff5ef;
+        }
+
+
+        .card p {
+
+            color: #cdbbb0;
+
+            line-height: 1.6;
+
+            font-size: 15px;
+
+            min-height: 72px;
+        }
+
+
+        /* =====================================
+           OPEN BUTTON
+        ===================================== */
+
+        .open-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 20px;
+
+            padding: 11px 18px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                rgba(255,106,0,0.13);
+
+            border:
+                1px solid rgba(255,130,50,0.3);
+
+            transition: 0.3s;
+        }
+
+
+        .open-button:hover {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9d00,
+                    #ff4d00
+                );
+
+            border-color:
+                transparent;
+
+            box-shadow:
+                0 0 20px rgba(255,90,0,0.3);
+
+            transform:
+                translateX(5px);
+        }
+
+
+        /* =====================================
+           BOTTOM CTA
+        ===================================== */
+
+        .bottom {
+
+            width: 90%;
+
+            max-width: 900px;
+
+            margin: 20px auto 90px;
+
+            padding: 50px 30px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,100,0,0.13),
+                    rgba(255,180,0,0.06)
+                );
+
+            border:
+                1px solid rgba(255,160,80,0.18);
+        }
+
+
+        .bottom h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .bottom p {
+
+            color: #cdb8aa;
+
+            margin-bottom: 25px;
+        }
+
+
+        .back-home {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9d00,
+                    #ff4d00
+                );
+
+            box-shadow:
+                0 10px 25px rgba(255,90,0,0.25);
+
+            transition: 0.3s;
+        }
+
+
+        .back-home:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 35px rgba(255,90,0,0.4);
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            background:
+                rgba(5,2,1,0.7);
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            color: #8f7c72;
+
+            line-height: 1.8;
+        }
+
+
+        footer span {
+            color: #ff8740;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                width: 94%;
+
+                top: 10px;
+
+                padding:
+                    10px 14px;
+            }
+
+
+            .logo {
+
+                font-size: 14px;
+            }
+
+
+            .logo-icon {
+
+                width: 32px;
+                height: 32px;
+            }
+
+
+            .home-button {
+
+                padding:
+                    8px 14px;
+
+                font-size: 13px;
+            }
+
+
+            .hero {
+
+                padding:
+                    130px 20px
+                    70px;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -1px;
+            }
+
+
+            .html-symbol {
+
+                width: 85px;
+                height: 85px;
+
+                font-size: 35px;
+            }
+
+
+            .program-heading {
+
+                display: block;
+            }
+
+
+            .program-heading h2 {
+
+                font-size: 30px;
+            }
+
+
+            .programs {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .card {
+
+                min-height:
+                    auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                &lt;/&gt;
+            </div>
+
+            <div>
+                DLA <span>• HTML LAB</span>
+            </div>
+
+        </div>
+
+
+        <a
+            href="../index.html"
+            class="home-button"
+        >
+            ← Main Home
+        </a>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+
+            <div class="html-symbol">
+                &lt;/&gt;
+            </div>
+
+
+            <div class="eyebrow">
+                01 / STRUCTURE
+            </div>
+
+
+            <h1>
+                HTML <span>Programs</span>
+            </h1>
+
+
+            <p>
+
+                Welcome to my HTML practical laboratory.
+                Here you can explore my collection of HTML
+                programs covering webpage structure, lists,
+                tables, forms, multimedia, semantic elements,
+                HTML5 features and more.
+
+            </p>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <strong>15</strong>
+
+                    <small>
+                        Programs
+                    </small>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>HTML</strong>
+
+                    <small>
+                        Structure
+                    </small>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>01</strong>
+
+                    <small>
+                        Laboratory
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PROGRAM HEADING
+    ====================================== -->
+
+    <div class="program-heading">
+
+        <div>
+
+            <h2>
+                Explore My Programs
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <p>
+            Choose a program to view its implementation →
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PROGRAM CARDS
+    ====================================== -->
+
+    <main class="programs">
+
+
+        <!-- 01 -->
+
+        <div class="card">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Basic HTML Webpage
+            </h3>
+
+            <p>
+                Create a basic webpage using headings,
+                paragraphs and line breaks.
+            </p>
+
+            <a
+                href="html-01.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 02 -->
+
+        <div class="card">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                HTML Lists
+            </h3>
+
+            <p>
+                Create ordered, unordered and
+                description lists.
+            </p>
+
+            <a
+                href="html-02.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 03 -->
+
+        <div class="card">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                HTML Tables
+            </h3>
+
+            <p>
+                Create tables with rows, columns,
+                borders and merged cells.
+            </p>
+
+            <a
+                href="html-03.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 04 -->
+
+        <div class="card">
+
+            <div class="number">
+                04
+            </div>
+
+            <h3>
+                Images & Hyperlinks
+            </h3>
+
+            <p>
+                Add images and hyperlinks
+                to an HTML webpage.
+            </p>
+
+            <a
+                href="html-04.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 05 -->
+
+        <div class="card">
+
+            <div class="number">
+                05
+            </div>
+
+            <h3>
+                Student Registration Form
+            </h3>
+
+            <p>
+                Create a student registration
+                form using HTML.
+            </p>
+
+            <a
+                href="html-05.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 06 -->
+
+        <div class="card">
+
+            <div class="number">
+                06
+            </div>
+
+            <h3>
+                Audio & Video
+            </h3>
+
+            <p>
+                Add audio and video elements
+                to a webpage.
+            </p>
+
+            <a
+                href="html-06.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 07 -->
+
+        <div class="card">
+
+            <div class="number">
+                07
+            </div>
+
+            <h3>
+                Frames / Iframe
+            </h3>
+
+            <p>
+                Embed another webpage or
+                content using an iframe.
+            </p>
+
+            <a
+                href="html-07.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 08 -->
+
+        <div class="card">
+
+            <div class="number">
+                08
+            </div>
+
+            <h3>
+                Semantic Elements
+            </h3>
+
+            <p>
+                Use header, nav, section, article
+                and footer semantic elements.
+            </p>
+
+            <a
+                href="html-08.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 09 -->
+
+        <div class="card">
+
+            <div class="number">
+                09
+            </div>
+
+            <h3>
+                HTML5 Input Types
+            </h3>
+
+            <p>
+                Use email, date, number and
+                password HTML5 input types.
+            </p>
+
+            <a
+                href="html-09.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="card">
+
+            <div class="number">
+                10
+            </div>
+
+            <h3>
+                College Timetable
+            </h3>
+
+            <p>
+                Design a college timetable
+                using an HTML table.
+            </p>
+
+            <a
+                href="html-10.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="card">
+
+            <div class="number">
+                11
+            </div>
+
+            <h3>
+                Internal & External CSS
+            </h3>
+
+            <p>
+                Demonstrate internal and external
+                CSS styling in an HTML page.
+            </p>
+
+            <a
+                href="html-11.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="card">
+
+            <div class="number">
+                12
+            </div>
+
+            <h3>
+                CSS Selectors & Styling
+            </h3>
+
+            <p>
+                Demonstrate selectors, colors,
+                fonts, margins, padding and borders.
+            </p>
+
+            <a
+                href="html-12.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="card">
+
+            <div class="number">
+                13
+            </div>
+
+            <h3>
+                Responsive Webpage
+            </h3>
+
+            <p>
+                Create a responsive webpage
+                using CSS media queries.
+            </p>
+
+            <a
+                href="html-13.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="card">
+
+            <div class="number">
+                14
+            </div>
+
+            <h3>
+                Bootstrap Components
+            </h3>
+
+            <p>
+                Create a webpage using
+                Bootstrap components.
+            </p>
+
+            <a
+                href="html-14.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="card">
+
+            <div class="number">
+                15
+            </div>
+
+            <h3>
+                Personal Portfolio
+            </h3>
+
+            <p>
+                Create a personal portfolio
+                webpage using HTML and CSS.
+            </p>
+
+            <a
+                href="html-15.html"
+                class="open-button"
+            >
+                Open Program →
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         BOTTOM SECTION
+    ====================================== -->
+
+    <section class="bottom">
+
+        <h2>
+            Ready to Explore? ✨
+        </h2>
+
+        <p>
+            Each program is a small step in
+            my web development journey.
+        </p>
+
+        <a
+            href="../index.html"
+            class="back-home"
+        >
+            ← Back to Main Portfolio
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <strong>
+            Devarshini Lakshmi Akshaya
+        </strong>
+
+        <br>
+
+        HTML • CSS • JavaScript Practical Portfolio
+
+        <br>
+
+        <span>
+            Learn • Build • Create
+        </span>
+
+    </footer>
+
+
+</body>
+
+</html>
+

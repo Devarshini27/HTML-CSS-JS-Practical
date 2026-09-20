@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 57 - Remove Duplicates</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            width: 300px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Remove Duplicate Elements</h1>
+
+    <input type="text" id="array"
+           placeholder="1, 2, 2, 3, 4, 4">
+
+    <br>
+
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+
+    <div id="output"></div>
+
+    <script>
+        function removeDuplicates() {
+
+            let array = document.getElementById("array").value
+                .split(",")
+                .map(Number);
+
+            let uniqueArray = [...new Set(array)];
+
+            document.getElementById("output").innerHTML =
+                "Original Array: " + array.join(", ") +
+                "<br>After Removing Duplicates: " +
+                uniqueArray.join(", ");
+        }
+    </script>
+
+</body>
+</html>

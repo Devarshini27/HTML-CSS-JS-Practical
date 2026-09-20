@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 31-35 | Motion Lab</title>
+<style>
+:root{--navy:#08295f;--blue:#1257c7;--cyan:#42b9f4;--line:#d8e3f2;--text:#17243b;--muted:#62718a}*{box-sizing:border-box}body{margin:0;color:var(--text);background:#f7faff;font-family:Arial,sans-serif}.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;padding:16px max(18px,6vw);color:#fff;background:linear-gradient(110deg,var(--navy),var(--blue))}.nav a{color:#fff;text-decoration:none}.shell{width:min(1050px,calc(100% - 32px));margin:auto}header{padding:65px 0 30px}.eyebrow{color:var(--blue);font-size:12px;font-weight:bold;letter-spacing:.15em;text-transform:uppercase}h1{font-size:clamp(40px,8vw,78px);line-height:.95;margin:12px 0}header p{max-width:700px;color:var(--muted);font-size:18px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding-bottom:60px}.card{padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 8px 22px #112a5510}.card.full{grid-column:1/-1}h2{font-size:18px;margin:0 0 12px}.muted{color:var(--muted)}.demo{min-height:125px;padding:25px;border-radius:10px;background:#eef5ff;display:grid;place-items:center}.transition-box{padding:17px;border-radius:8px;color:#fff;background:var(--blue);transition:transform .35s,background .35s,box-shadow .35s}.transition-box:hover{transform:translateY(-8px) scale(1.08);background:var(--navy);box-shadow:0 14px 25px #08295f44}.rotate{animation:float 3s ease-in-out infinite}.perspective{perspective:500px}.cube{padding:22px;color:#fff;background:var(--blue);transform:rotateX(20deg) rotateY(-25deg);transition:transform .5s}.cube:hover{transform:rotateX(0) rotateY(0) translateZ(35px)}.spinner{width:42px;height:42px;border:5px solid #cbd9ed;border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px) rotate(3deg)}}footer{padding:25px;color:var(--muted);text-align:center;font-size:13px}@media(max-width:650px){.grid{grid-template-columns:1fr}.card.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<nav class="nav"><strong>DLA / CSS MOTION LAB</strong><a href="index.html">CSS Programs</a></nav>
+<main class="shell"><header><div class="eyebrow">Programs 31-35</div><h1>CSS motion, made visible.</h1><p>Hover the first example, rotate the 3D panel, and watch the keyframe animation and loading spinner run without JavaScript.</p></header><section class="grid">
+<article class="card"><div class="eyebrow">31 / transition</div><h2>Colors, sizes, shadows, positions</h2><div class="demo"><div class="transition-box">Hover me</div></div></article>
+<article class="card"><div class="eyebrow">32 / 2D transform</div><h2>Rotate, scale, translate, skew</h2><div class="demo"><div class="transition-box rotate">Animated transform</div></div></article>
+<article class="card"><div class="eyebrow">33 / 3D transform</div><h2>Perspective and depth</h2><div class="demo perspective"><div class="cube">Hover for 3D</div></div></article>
+<article class="card"><div class="eyebrow">34 / keyframes</div><h2>Reusable animation</h2><div class="demo"><div class="transition-box rotate">Floating status</div></div></article>
+<article class="card full"><div class="eyebrow">35 / loading</div><h2>CSS loading spinner</h2><div class="demo"><div class="spinner" aria-label="Loading"></div></div></article>
+</section></main><footer>CSS Motion Lab | Programs 31-35</footer>
+</body>
+</html>

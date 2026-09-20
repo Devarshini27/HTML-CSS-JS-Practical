@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML-04 | Images and Hyperlinks</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 10%, #ff8a24 0%, transparent 28%),
+                radial-gradient(circle at 85% 25%, #ffb347 0%, transparent 25%),
+                radial-gradient(circle at 50% 100%, #ff6a00 0%, transparent 30%),
+                linear-gradient(135deg, #241006, #120b07 45%, #1c0b02);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 0 60px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid #ff8a2460;
+            border-radius: 30px;
+            background: #ff8a2418;
+        }
+
+        nav a:hover {
+            color: #ffb347;
+            border-color: #ff8a24;
+        }
+
+        .tag {
+            color: #ffb347;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1;
+            margin: 15px 0 30px;
+        }
+
+        h2 {
+            color: #ff9d38;
+        }
+
+        .card,
+        .output {
+            background: rgba(255, 138, 36, 0.12);
+            border: 1px solid #ff8a2460;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(15px);
+        }
+
+        .output {
+            background: rgba(35, 15, 3, 0.75);
+            text-align: center;
+        }
+
+        img {
+            width: 180px;
+            max-width: 100%;
+            border-radius: 20px;
+            border: 3px solid #ff8a24;
+            box-shadow: 0 0 30px #ff8a2455;
+        }
+
+        .link-button {
+            display: inline-block;
+            color: white;
+            background: #ff8a24;
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 8px;
+        }
+
+        .link-button:hover {
+            background: #ffb347;
+            color: #111;
+        }
+
+        pre {
+            background: #080402;
+            border: 1px solid #ff8a2460;
+            border-radius: 18px;
+            padding: 22px;
+            overflow-x: auto;
+            color: #ffd49d;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            color: #ffd49d;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <a href="html-03.html">← Previous</a>
+        <a href="index.html">HTML Programs</a>
+        <a href="../index.html">⌂ Home</a>
+        <a href="html-05.html">Next →</a>
+    </nav>
+
+    <div class="tag">HTML PROGRAM 04 / 15</div>
+
+    <h1>Images & Hyperlinks</h1>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>
+            To create an HTML page containing images and hyperlinks.
+        </p>
+    </div>
+
+    <h2>Working Output</h2>
+
+    <div class="output">
+
+        <h2>My Image</h2>
+
+        <img
+            src="../assets/images/profile.png"
+            alt="Profile Image">
+
+        <h2>Useful Links</h2>
+
+        <a
+            class="link-button"
+            href="https://www.google.com"
+            target="_blank">
+            Visit Google
+        </a>
+
+        <a
+            class="link-button"
+            href="https://github.com/Devarshini27"
+            target="_blank">
+            Visit My GitHub
+        </a>
+
+    </div>
+
+    <h2>Source Code</h2>
+
+    <pre><code>&lt;h2&gt;My Image&lt;/h2&gt;
+
+&lt;img
+    src="../assets/images/profile.png"
+    alt="Profile Image"
+    width="180"&gt;
+
+&lt;h2&gt;Useful Links&lt;/h2&gt;
+
+&lt;p&gt;
+    &lt;a href="https://www.google.com"
+       target="_blank"&gt;
+       Visit Google
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;a href="https://github.com/Devarshini27"
+       target="_blank"&gt;
+       Visit My GitHub
+    &lt;/a&gt;
+&lt;/p&gt;</code></pre>
+
+    <div class="card">
+        <h2>Concepts Used</h2>
+        <p>• img element</p>
+        <p>• src attribute</p>
+        <p>• alt attribute</p>
+        <p>• anchor element</p>
+        <p>• href attribute</p>
+        <p>• target="_blank"</p>
+    </div>
+
+    <footer>
+        Devarshini Lakshmi Akshaya
+    </footer>
+
+</div>
+
+</body>
+</html>

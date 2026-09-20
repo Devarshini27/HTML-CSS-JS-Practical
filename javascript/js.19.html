@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 19 - Objects</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #output {
+            margin: 25px auto;
+            padding: 20px;
+            max-width: 500px;
+            text-align: left;
+            color: #ffe082;
+            background: #020914;
+            border-radius: 12px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 19</h1>
+    <p>Demonstrate JavaScript Objects</p>
+
+    <button onclick="showObject()">Create Object</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function showObject() {
+
+            let student = {
+                name: "Devarshini",
+                age: 18,
+                course: "B.Tech CSE",
+                university: "Sai University"
+            };
+
+            document.getElementById("output").innerHTML =
+                "Name: " + student.name + "\n" +
+                "Age: " + student.age + "\n" +
+                "Course: " + student.course + "\n" +
+                "University: " + student.university;
+        }
+
+    </script>
+
+</body>
+</html>

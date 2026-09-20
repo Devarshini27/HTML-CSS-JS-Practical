@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 26 - Change Image</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Change Image Using JavaScript</h1>
+
+    <img id="myImage"
+         src="https://picsum.photos/id/1015/300/200"
+         alt="Sample Image">
+
+    <br>
+
+    <button onclick="changeImage()">Change Image</button>
+
+    <script>
+        function changeImage() {
+            document.getElementById("myImage").src =
+                "https://picsum.photos/id/1025/300/200";
+        }
+    </script>
+
+</body>
+</html>

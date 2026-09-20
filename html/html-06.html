@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML-06 | Audio and Video</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 10%, #ff8a24 0%, transparent 28%),
+                radial-gradient(circle at 85% 25%, #ffb347 0%, transparent 25%),
+                radial-gradient(circle at 50% 100%, #ff6a00 0%, transparent 30%),
+                linear-gradient(135deg, #241006, #120b07 45%, #1c0b02);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 0 60px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid #ff8a2460;
+            border-radius: 30px;
+            background: #ff8a2418;
+        }
+
+        nav a:hover {
+            color: #ffb347;
+            border-color: #ff8a24;
+        }
+
+        .tag {
+            color: #ffb347;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            margin: 15px 0 30px;
+        }
+
+        h2 {
+            color: #ff9d38;
+        }
+
+        .card,
+        .output {
+            background: rgba(255, 138, 36, 0.12);
+            border: 1px solid #ff8a2460;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(15px);
+        }
+
+        .output {
+            background: rgba(35, 15, 3, 0.75);
+            text-align: center;
+        }
+
+        audio,
+        video {
+            max-width: 100%;
+            margin: 15px;
+        }
+
+        pre {
+            background: #080402;
+            border: 1px solid #ff8a2460;
+            border-radius: 18px;
+            padding: 22px;
+            overflow-x: auto;
+            color: #ffd49d;
+        }
+
+        footer {
+            text-align: center;
+            color: #ffd49d;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <a href="html-05.html">← Previous</a>
+        <a href="index.html">HTML Programs</a>
+        <a href="../index.html">⌂ Home</a>
+        <a href="html-07.html">Next →</a>
+    </nav>
+
+    <div class="tag">HTML PROGRAM 06 / 15</div>
+
+    <h1>Audio & Video</h1>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>
+            To create a webpage using audio and video elements.
+        </p>
+    </div>
+
+    <h2>Working Output</h2>
+
+    <div class="output">
+
+        <h2>Audio</h2>
+
+        <audio controls>
+            <source
+                src="https://www.w3schools.com/html/horse.mp3"
+                type="audio/mpeg">
+
+            Your browser does not support audio.
+        </audio>
+
+        <h2>Video</h2>
+
+        <video width="600" controls>
+            <source
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                type="video/mp4">
+
+            Your browser does not support video.
+        </video>
+
+    </div>
+
+    <h2>Source Code</h2>
+
+    <pre><code>&lt;h1&gt;Multimedia Elements&lt;/h1&gt;
+
+&lt;h2&gt;Audio&lt;/h2&gt;
+
+&lt;audio controls&gt;
+
+    &lt;source
+        src="https://www.w3schools.com/html/horse.mp3"
+        type="audio/mpeg"&gt;
+
+&lt;/audio&gt;
+
+
+&lt;h2&gt;Video&lt;/h2&gt;
+
+&lt;video width="500" controls&gt;
+
+    &lt;source
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        type="video/mp4"&gt;
+
+&lt;/video&gt;</code></pre>
+
+    <div class="card">
+        <h2>Concepts Used</h2>
+        <p>• audio element</p>
+        <p>• video element</p>
+        <p>• source element</p>
+        <p>• controls attribute</p>
+    </div>
+
+    <footer>
+        Devarshini Lakshmi Akshaya
+    </footer>
+
+</div>
+
+</body>
+</html>

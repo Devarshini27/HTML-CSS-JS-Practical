@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 08 - Prime Number</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 08</h1>
+    <p>Check Whether a Number is Prime</p>
+
+    <input type="number" id="number" placeholder="Enter number">
+
+    <button onclick="checkPrime()">Check</button>
+
+    <div id="output"></div>
+
+    <script>
+        function checkPrime() {
+
+            let n = Number(document.getElementById("number").value);
+            let prime = true;
+
+            if (n < 2) {
+                prime = false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+
+                if (n % i === 0) {
+                    prime = false;
+                    break;
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                prime ? n + " is a Prime Number" :
+                        n + " is not a Prime Number";
+        }
+    </script>
+
+</body>
+</html>

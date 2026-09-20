@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 06 - Factorial</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 06</h1>
+    <p>Find the Factorial of a Number</p>
+
+    <input type="number" id="number" min="0" placeholder="Enter number">
+
+    <button onclick="factorial()">Calculate</button>
+
+    <div id="output"></div>
+
+    <script>
+        function factorial() {
+
+            let n = Number(document.getElementById("number").value);
+            let result = 1;
+
+            for (let i = 1; i <= n; i++) {
+                result = result * i;
+            }
+
+            document.getElementById("output").innerHTML =
+                n + "! = " + result;
+        }
+    </script>
+
+</body>
+</html>

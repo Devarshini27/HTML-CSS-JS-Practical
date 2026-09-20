@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 45 - LocalStorage</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+        }
+
+        #output {
+            color: #ffe082;
+            font-size: 22px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>LocalStorage</h1>
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <br>
+
+    <button onclick="saveData()">Save</button>
+    <button onclick="getData()">Retrieve</button>
+
+    <div id="output"></div>
+
+    <script>
+        function saveData() {
+
+            let name = document.getElementById("name").value;
+
+            localStorage.setItem("username", name);
+
+            document.getElementById("output").innerHTML =
+                "Data saved successfully!";
+        }
+
+        function getData() {
+
+            let name = localStorage.getItem("username");
+
+            if (name) {
+                document.getElementById("output").innerHTML =
+                    "Stored Name: " + name;
+            } else {
+                document.getElementById("output").innerHTML =
+                    "No data found.";
+            }
+        }
+    </script>
+
+</body>
+</html>

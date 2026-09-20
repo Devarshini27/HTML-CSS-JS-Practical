@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 30 - Form Validation</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: #ffe082;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <input type="password" id="password" placeholder="Enter password">
+
+        <br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (name === "" || email === "" || password === "") {
+
+                document.getElementById("message").innerHTML =
+                    "Please fill in all fields.";
+
+                return false;
+            }
+
+            if (password.length < 6) {
+
+                document.getElementById("message").innerHTML =
+                    "Password must contain at least 6 characters.";
+
+                return false;
+            }
+
+            document.getElementById("message").innerHTML =
+                "Form submitted successfully!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

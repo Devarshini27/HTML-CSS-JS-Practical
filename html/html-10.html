@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML-10 | College Timetable</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 10%, #ff8a24 0%, transparent 28%),
+                radial-gradient(circle at 85% 25%, #ffb347 0%, transparent 25%),
+                radial-gradient(circle at 50% 100%, #ff6a00 0%, transparent 30%),
+                linear-gradient(135deg, #241006, #120b07 45%, #1c0b02);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 0 60px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid #ff8a2460;
+            border-radius: 30px;
+            background: #ff8a2418;
+        }
+
+        nav a:hover {
+            color: #ffb347;
+            border-color: #ff8a24;
+        }
+
+        .tag {
+            color: #ffb347;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            margin: 15px 0 30px;
+        }
+
+        h2 {
+            color: #ff9d38;
+        }
+
+        .card,
+        .output {
+            background: rgba(255, 138, 36, 0.12);
+            border: 1px solid #ff8a2460;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(15px);
+        }
+
+        .output {
+            overflow-x: auto;
+            background: rgba(35, 15, 3, 0.75);
+        }
+
+        table {
+            width: 100%;
+            min-width: 750px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ff9d38;
+            padding: 14px;
+            text-align: center;
+        }
+
+        th {
+            background: #ff8a2440;
+            color: #ffd49d;
+        }
+
+        td {
+            background: #ff8a2410;
+        }
+
+        pre {
+            background: #080402;
+            border: 1px solid #ff8a2460;
+            border-radius: 18px;
+            padding: 22px;
+            overflow-x: auto;
+            color: #ffd49d;
+        }
+
+        footer {
+            text-align: center;
+            color: #ffd49d;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <a href="html-09.html">← Previous</a>
+        <a href="index.html">HTML Programs</a>
+        <a href="../index.html">⌂ Home</a>
+        <a href="html-11.html">Next →</a>
+    </nav>
+
+    <div class="tag">HTML PROGRAM 10 / 15</div>
+
+    <h1>College Timetable</h1>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>
+            To create a college timetable using an HTML table.
+        </p>
+    </div>
+
+    <h2>Working Output</h2>
+
+    <div class="output">
+
+        <table>
+
+            <tr>
+                <th>Day</th>
+                <th>9:00 - 10:00</th>
+                <th>10:00 - 11:00</th>
+                <th>11:00 - 12:00</th>
+                <th>1:00 - 2:00</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>Math</td>
+                <td>Python</td>
+                <td>Physics</td>
+                <td>Data Structures</td>
+            </tr>
+
+            <tr>
+                <td>Tuesday</td>
+                <td>English</td>
+                <td>Math</td>
+                <td>Python Lab</td>
+                <td>Web Technology</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>Physics</td>
+                <td>Data Structures</td>
+                <td>Math</td>
+                <td>Web Technology</td>
+            </tr>
+
+            <tr>
+                <td>Thursday</td>
+                <td>Python</td>
+                <td>English</td>
+                <td>Web Lab</td>
+                <td>Math</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>Data Structures</td>
+                <td>Physics</td>
+                <td>Python</td>
+                <td>English</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <h2>Source Code</h2>
+
+    <pre><code>&lt;table border="1" cellpadding="10"&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Day&lt;/th&gt;
+        &lt;th&gt;9:00 - 10:00&lt;/th&gt;
+        &lt;th&gt;10:00 - 11:00&lt;/th&gt;
+        &lt;th&gt;11:00 - 12:00&lt;/th&gt;
+        &lt;th&gt;1:00 - 2:00&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Monday&lt;/td&gt;
+        &lt;td&gt;Math&lt;/td&gt;
+        &lt;td&gt;Python&lt;/td&gt;
+        &lt;td&gt;Physics&lt;/td&gt;
+        &lt;td&gt;Data Structures&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Tuesday&lt;/td&gt;
+        &lt;td&gt;English&lt;/td&gt;
+        &lt;td&gt;Math&lt;/td&gt;
+        &lt;td&gt;Python Lab&lt;/td&gt;
+        &lt;td&gt;Web Technology&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Wednesday&lt;/td&gt;
+        &lt;td&gt;Physics&lt;/td&gt;
+        &lt;td&gt;Data Structures&lt;/td&gt;
+        &lt;td&gt;Math&lt;/td&gt;
+        &lt;td&gt;Web Technology&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;</code></pre>
+
+    <div class="card">
+        <h2>Concepts Used</h2>
+        <p>• HTML tables</p>
+        <p>• Rows and columns</p>
+        <p>• Table headings</p>
+        <p>• Table data</p>
+    </div>
+
+    <footer>
+        Devarshini Lakshmi Akshaya
+    </footer>
+
+</div>
+
+</body>
+</html>

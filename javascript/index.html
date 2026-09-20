@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Laboratory</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 80% 10%, #3d2a00 0%, transparent 25%),
+                radial-gradient(circle at 10% 50%, #171b2e 0%, transparent 35%),
+                linear-gradient(135deg, #020914, #061426, #020812);
+
+            color: #f5f7ff;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(2, 9, 20, 0.92);
+
+            border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 22px;
+            font-weight: 800;
+
+            color: #ffc107;
+        }
+
+
+        .logo-box {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffc107;
+
+            color: #10182b;
+
+            border-radius: 8px;
+
+            font-size: 19px;
+            font-weight: 900;
+
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.25);
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+
+        .nav-links a {
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            background: rgba(255, 193, 7, 0.12);
+            color: #ffc107;
+        }
+
+
+        .nav-links .active {
+            background: #ffc107;
+            color: #111827;
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: 90%;
+            max-width: 1400px;
+
+            margin: auto;
+
+            min-height: 420px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 60px 0;
+        }
+
+
+        .hero-small {
+            color: #ffc107;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 90px);
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #ffc107;
+        }
+
+
+        .hero p {
+            max-width: 650px;
+
+            color: #c6cede;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .hero-image img {
+            width: 100%;
+            max-width: 650px;
+
+            border-radius: 25px;
+
+            object-fit: cover;
+
+            filter: drop-shadow(
+                0 20px 40px rgba(255, 193, 7, 0.18)
+            );
+        }
+
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+        }
+
+
+        .stat {
+            min-width: 150px;
+
+            padding: 17px 20px;
+
+            border: 1px solid rgba(255, 193, 7, 0.35);
+
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+
+        .stat strong {
+            display: block;
+
+            color: #ffc107;
+
+            font-size: 25px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .stat span {
+            color: #aab3c5;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 94%;
+            max-width: 1500px;
+
+            margin: auto;
+
+            padding-bottom: 100px;
+        }
+
+
+        .section {
+            margin-top: 40px;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            background: rgba(3, 12, 27, 0.72);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .section-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+
+        .section-number {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #ffc107;
+
+            color: #111827;
+
+            font-weight: 900;
+        }
+
+
+        .section-header h2 {
+            font-size: 25px;
+        }
+
+
+        .section-header p {
+            color: #8f9bb0;
+
+            font-size: 13px;
+
+            margin-top: 4px;
+        }
+
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 12px;
+        }
+
+
+        .program {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            min-height: 65px;
+
+            padding: 12px 14px;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            transition: 0.25s;
+        }
+
+
+        .program:hover {
+            transform: translateY(-3px);
+
+            border-color: #ffc107;
+
+            background: rgba(255, 193, 7, 0.05);
+        }
+
+
+        .program-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            min-width: 0;
+        }
+
+
+        .number {
+            color: #ffc107;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            min-width: 28px;
+        }
+
+
+        .program-title {
+            color: #e8edf7;
+
+            font-size: 13px;
+
+            line-height: 1.4;
+        }
+
+
+        .open {
+            flex-shrink: 0;
+
+            text-decoration: none;
+
+            color: #ffc107;
+
+            border: 1px solid #ffc107;
+
+            border-radius: 20px;
+
+            padding: 5px 11px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            transition: 0.25s;
+        }
+
+
+        .open:hover {
+            background: #ffc107;
+
+            color: #101827;
+        }
+
+
+
+        /* =========================
+           DIFFERENT SECTION COLORS
+        ========================= */
+
+        .section:nth-child(2) .section-number {
+            background: #00d9c0;
+        }
+
+        .section:nth-child(2) .number,
+        .section:nth-child(2) .open {
+            color: #00d9c0;
+            border-color: #00d9c0;
+        }
+
+
+        .section:nth-child(3) .section-number {
+            background: #a855f7;
+        }
+
+        .section:nth-child(3) .number,
+        .section:nth-child(3) .open {
+            color: #c084fc;
+            border-color: #a855f7;
+        }
+
+
+        .section:nth-child(4) .section-number {
+            background: #38bdf8;
+        }
+
+        .section:nth-child(4) .number,
+        .section:nth-child(4) .open {
+            color: #38bdf8;
+            border-color: #38bdf8;
+        }
+
+
+        .section:nth-child(5) .section-number {
+            background: #ec4899;
+        }
+
+        .section:nth-child(5) .number,
+        .section:nth-child(5) .open {
+            color: #ec4899;
+            border-color: #ec4899;
+        }
+
+
+        .section:nth-child(6) .section-number {
+            background: #14b8a6;
+        }
+
+        .section:nth-child(6) .number,
+        .section:nth-child(6) .open {
+            color: #14b8a6;
+            border-color: #14b8a6;
+        }
+
+
+        .section:nth-child(7) .section-number {
+            background: #f59e0b;
+        }
+
+        .section:nth-child(7) .number,
+        .section:nth-child(7) .open {
+            color: #f59e0b;
+            border-color: #f59e0b;
+        }
+
+
+        .section:nth-child(8) .section-number {
+            background: #a855f7;
+        }
+
+        .section:nth-child(8) .number,
+        .section:nth-child(8) .open {
+            color: #c084fc;
+            border-color: #a855f7;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            color: #8b95a8;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.1);
+        }
+
+
+        footer strong {
+            color: #ffc107;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                height: auto;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding-top: 45px;
+            }
+
+
+            .hero-image {
+                order: -1;
+            }
+
+
+            .hero-image img {
+                max-width: 500px;
+            }
+
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .nav-links {
+                gap: 2px;
+            }
+
+
+            .nav-links a {
+                padding: 7px 9px;
+
+                font-size: 11px;
+            }
+
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+
+            .section {
+                padding: 15px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-box">
+                JS
+            </div>
+
+            JavaScript
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="../html/index.html">
+                HTML
+            </a>
+
+            <a href="../css/index.html">
+                CSS
+            </a>
+
+            <a href="index.html" class="active">
+                JavaScript
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div>
+
+            <div class="hero-small">
+                03 / JAVASCRIPT LABORATORY
+            </div>
+
+
+            <h1>
+                <span>JavaScript</span>
+                Programs
+            </h1>
+
+
+            <p>
+                Explore the complete JavaScript practical assignment
+                covering fundamentals, DOM manipulation, events,
+                forms and validation, browser features, web storage,
+                and mini projects.
+            </p>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>67+</strong>
+                    <span>CORE PROGRAMS</span>
+                </div>
+
+
+                <div class="stat">
+                    <strong>7</strong>
+                    <span>MAIN SECTIONS</span>
+                </div>
+
+
+                <div class="stat">
+                    <strong>JS</strong>
+                    <span>PROGRAMMING</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+       
+            <img
+                src="javascript.png"
+                alt="JavaScript Programming"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROGRAMS
+    ========================= -->
+
+    <main id="programs">
+
+
+        <!-- =================================
+             01 - CORE JAVASCRIPT
+        ================================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    01
+                </div>
+
+                <div>
+                    <h2>JavaScript Fundamentals</h2>
+
+                    <p>
+                        Basic syntax, operators, loops, functions,
+                        arrays, objects and more.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">01</span>
+                        <span class="program-title">
+                            Display “Hello World”
+                        </span>
+                    </div>
+                    <a href="js-01.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">02</span>
+                        <span class="program-title">
+                            Perform arithmetic operations
+                        </span>
+                    </div>
+                    <a href="js-02.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">03</span>
+                        <span class="program-title">
+                            Find the largest of three numbers
+                        </span>
+                    </div>
+                    <a href="js-03.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">04</span>
+                        <span class="program-title">
+                            Check whether a number is even or odd
+                        </span>
+                    </div>
+                    <a href="js-04.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">05</span>
+                        <span class="program-title">
+                            Check whether a number is positive, negative, or zero
+                        </span>
+                    </div>
+                    <a href="js-05.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">06</span>
+                        <span class="program-title">
+                            Find the factorial of a number
+                        </span>
+                    </div>
+                    <a href="js-06.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">07</span>
+                        <span class="program-title">
+                            Generate the Fibonacci series
+                        </span>
+                    </div>
+                    <a href="js-07.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">08</span>
+                        <span class="program-title">
+                            Check whether a number is prime
+                        </span>
+                    </div>
+                    <a href="js-08.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">09</span>
+                        <span class="program-title">
+                            Check whether a number is a palindrome
+                        </span>
+                    </div>
+                    <a href="js-09.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">10</span>
+                        <span class="program-title">
+                            Reverse a number
+                        </span>
+                    </div>
+                    <a href="js-10.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">11</span>
+                        <span class="program-title">
+                            Find the sum of digits of a number
+                        </span>
+                    </div>
+                    <a href="js-11.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">12</span>
+                        <span class="program-title">
+                            Find largest and smallest element in an array
+                        </span>
+                    </div>
+                    <a href="js-12.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">13</span>
+                        <span class="program-title">
+                            Sort an array
+                        </span>
+                    </div>
+                    <a href="js-13.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">14</span>
+                        <span class="program-title">
+                            Find sum and average of array elements
+                        </span>
+                    </div>
+                    <a href="js-14.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">15</span>
+                        <span class="program-title">
+                            Demonstrate JavaScript functions
+                        </span>
+                    </div>
+                    <a href="js-15.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">16</span>
+                        <span class="program-title">
+                            Program using arrow functions
+                        </span>
+                    </div>
+                    <a href="js-16.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">17</span>
+                        <span class="program-title">
+                            Strings and string methods
+                        </span>
+                    </div>
+                    <a href="js-17.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">18</span>
+                        <span class="program-title">
+                            Arrays and array methods
+                        </span>
+                    </div>
+                    <a href="js-18.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">19</span>
+                        <span class="program-title">
+                            Objects in JavaScript
+                        </span>
+                    </div>
+                    <a href="js-19.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">20</span>
+                        <span class="program-title">
+                            Date and Math objects
+                        </span>
+                    </div>
+                    <a href="js-20.html" class="open">Open</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">21</span>
+                        <span class="program-title">
+                            DOM & Event-Based Experiments
+                        </span>
+                    </div>
+                    <a href="#dom" class="open">View</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">37</span>
+                        <span class="program-title">
+                            Advanced JavaScript Lab Questions
+                        </span>
+                    </div>
+                    <a href="#advanced" class="open">View</a>
+                </div>
+
+
+                <div class="program">
+                    <div class="program-info">
+                        <span class="number">67</span>
+                        <span class="program-title">
+                            Regular expression email validation
+                        </span>
+                    </div>
+                    <a href="js-67.html" class="open">Open</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             02 - DOM
+        ================================= -->
+
+        <section class="section" id="dom">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    02
+                </div>
+
+                <div>
+                    <h2>DOM & Event-Based Experiments</h2>
+
+                    <p>
+                        DOM manipulation, dynamic elements,
+                        tables, dropdowns and interactive components.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const domPrograms = [
+                        "Add new elements dynamically",
+                        "Remove HTML elements dynamically",
+                        "Change CSS styles using JavaScript",
+                        "Change multiple HTML elements simultaneously",
+                        "Demonstrate getElementById() and getElementsByClassName()",
+                        "Demonstrate querySelector() and querySelectorAll()",
+                        "Create and remove CSS classes dynamically",
+                        "Create a dynamic table",
+                        "Add and delete rows from a table",
+                        "Search/filter table records",
+                        "Live character counter for a textarea",
+                        "Password show/hide feature",
+                        "Dynamic dropdown list",
+                        "Dependent dropdown: Country → State → City",
+                        "Image slideshow/carousel"
+                    ];
+
+                    domPrograms.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+                                <div class="program-info">
+                                    <span class="number">DOM ${number}</span>
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+                                </div>
+
+                                <a
+                                    href="dom-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             03 - ADVANCED
+        ================================= -->
+
+        <section class="section" id="advanced">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <div>
+                    <h2>Advanced JavaScript Lab Questions</h2>
+
+                    <p>
+                        ES6, classes, promises, APIs, arrays,
+                        strings and regular expressions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const advancedPrograms = [
+                        "ES6 let, const, template literals, and destructuring",
+                        "Spread and rest operators",
+                        "Classes and objects",
+                        "Inheritance in JavaScript",
+                        "Callbacks, promises, and async/await",
+                        "Fetch data from an API using Fetch API",
+                        "Display API data dynamically on a webpage",
+                        "Store and retrieve data using localStorage",
+                        "Responsive login form with JavaScript validation",
+                        "Complete interactive webpage using HTML, CSS, and JavaScript",
+                        "Swap two numbers",
+                        "Find GCD of two numbers",
+                        "Find LCM of two numbers",
+                        "Check whether a number is an Armstrong number",
+                        "Check whether a number is a perfect number",
+                        "Generate a multiplication table",
+                        "Calculate the power of a number",
+                        "Count the number of digits",
+                        "Find the second-largest element in an array",
+                        "Remove duplicate elements from an array",
+                        "Merge two arrays",
+                        "Find frequency of each element in an array",
+                        "Find common elements in two arrays",
+                        "Reverse a string",
+                        "Check whether a string is a palindrome",
+                        "Count vowels and consonants",
+                        "Count words in a string",
+                        "Find frequency of characters",
+                        "Demonstrate regular expressions",
+                        "Validate an email using a regular expression"
+                    ];
+
+                    advancedPrograms.forEach((title, index) => {
+
+                        const number = index + 38;
+
+                        const file =
+                            `js-${String(number).padStart(2, "0")}.html`;
+
+                        document.write(`
+                            <div class="program">
+                                <div class="program-info">
+                                    <span class="number">
+                                        ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+                                </div>
+
+                                <a
+                                    href="${file}"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             04 - EVENTS
+        ================================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    04
+                </div>
+
+                <div>
+                    <h2>JavaScript Events</h2>
+
+                    <p>
+                        Mouse, keyboard, form events,
+                        bubbling, capturing and drag-and-drop.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const eventPrograms = [
+                        "Mouse events",
+                        "Keyboard events",
+                        "Form events: submit, change, focus, and blur",
+                        "Double-click events",
+                        "Event bubbling and event capturing",
+                        "Event delegation",
+                        "Keyboard-controlled webpage/game",
+                        "Drag-and-drop application"
+                    ];
+
+                    eventPrograms.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+
+                                <div class="program-info">
+
+                                    <span class="number">
+                                        EVENT ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+
+                                </div>
+
+                                <a
+                                    href="events-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             05 - FORMS
+        ================================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    05
+                </div>
+
+                <div>
+                    <h2>Forms & Validation</h2>
+
+                    <p>
+                        User input validation, passwords,
+                        registration and form handling.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const formPrograms = [
+                        "Student registration form with validation",
+                        "Login form with username and password validation",
+                        "Password strength checker",
+                        "Signup form with password confirmation",
+                        "Feedback form with validation",
+                        "College admission form with validation",
+                        "Display validation errors dynamically"
+                    ];
+
+                    formPrograms.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+
+                                <div class="program-info">
+
+                                    <span class="number">
+                                        FORM ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+
+                                </div>
+
+                                <a
+                                    href="forms-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             06 - BROWSER & STORAGE
+        ================================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    06
+                </div>
+
+                <div>
+                    <h2>Browser Objects & Web Storage</h2>
+
+                    <p>
+                        Window, Navigator, Location, History,
+                        localStorage and sessionStorage.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const browserPrograms = [
+                        "Demonstrate the Window object",
+                        "Demonstrate alert(), confirm(), and prompt()",
+                        "Create a program using setTimeout()",
+                        "Create a program using setInterval()",
+                        "Create a digital clock",
+                        "Create a countdown timer",
+                        "Create a stopwatch",
+                        "Demonstrate the Location object",
+                        "Redirect the user to another webpage",
+                        "Display the current webpage URL",
+                        "Demonstrate the History object",
+                        "Back, Forward, and Reload operations",
+                        "Demonstrate the Navigator object",
+                        "Display browser information",
+                        "Display screen width and height",
+                        "Detect online/offline status",
+                        "Display current browser language",
+                        "Demonstrate browser geolocation",
+                        "Display geographical coordinates",
+                        "Update information when browser goes online/offline"
+                    ];
+
+                    browserPrograms.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+
+                                <div class="program-info">
+
+                                    <span class="number">
+                                        BROWSER ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+
+                                </div>
+
+                                <a
+                                    href="browser-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+
+                            </div>
+                        `);
+
+                    });
+
+
+                    const storagePrograms = [
+                        "Store a username using localStorage",
+                        "Retrieve and display localStorage data",
+                        "Update localStorage data",
+                        "Delete an item from localStorage",
+                        "Clear all localStorage data",
+                        "Store multiple values using localStorage",
+                        "Store an array using JSON",
+                        "Store a JavaScript object in localStorage",
+                        "Student record system using localStorage",
+                        "To-do list using localStorage",
+                        "Notes application using localStorage",
+                        "Shopping cart using localStorage",
+                        "Login preference system",
+                        "Dark/light theme switcher",
+                        "Save preferred font size",
+                        "Recently viewed items",
+                        "Visitor counter",
+                        "Compare localStorage and sessionStorage",
+                        "Temporary form data using sessionStorage",
+                        "Multi-page form using sessionStorage",
+                        "Automatically save form data",
+                        "Restore form data after refresh",
+                        "Persistent shopping cart",
+                        "Student marks database",
+                        "CRUD application using localStorage"
+                    ];
+
+                    storagePrograms.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+
+                                <div class="program-info">
+
+                                    <span class="number">
+                                        STORAGE ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+
+                                </div>
+
+                                <a
+                                    href="storage-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             07 - MINI PROJECTS
+        ================================= -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div class="section-number">
+                    07
+                </div>
+
+                <div>
+                    <h2>Mini Projects</h2>
+
+                    <p>
+                        Real-world JavaScript projects and
+                        interactive applications.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <script>
+
+                    const projects = [
+                        "Digital calculator",
+                        "Digital clock",
+                        "Stopwatch",
+                        "Countdown timer",
+                        "To-do list application",
+                        "Weather application using an API",
+                        "Quiz application",
+                        "Number guessing game",
+                        "Tic-tac-toe game",
+                        "Simple expense tracker",
+                        "Student marks/grade calculator",
+                        "Simple shopping cart",
+                        "Notes application using localStorage",
+                        "Random password generator",
+                        "BMI calculator",
+                        "Currency converter using an API",
+                        "Complete interactive portfolio website"
+                    ];
+
+                    projects.forEach((title, index) => {
+
+                        const number =
+                            String(index + 1).padStart(2, "0");
+
+                        document.write(`
+                            <div class="program">
+
+                                <div class="program-info">
+
+                                    <span class="number">
+                                        PROJECT ${number}
+                                    </span>
+
+                                    <span class="program-title">
+                                        ${title}
+                                    </span>
+
+                                </div>
+
+                                <a
+                                    href="project-${number}.html"
+                                    class="open"
+                                >
+                                    Open
+                                </a>
+
+                            </div>
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        Built with
+        <strong>♥</strong>
+        by
+        <strong>Devarshini Lakshmi Akshaya</strong>
+
+    </footer>
+
+
+</body>
+</html>

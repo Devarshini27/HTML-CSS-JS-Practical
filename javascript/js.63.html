@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 63 - Vowels and Consonants</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        input {
+            width: 300px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ffc107;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Count Vowels and Consonants</h1>
+
+    <input type="text" id="text" placeholder="Enter a string">
+
+    <br>
+
+    <button onclick="countLetters()">Count</button>
+
+    <div id="output"></div>
+
+    <script>
+        function countLetters() {
+
+            let text = document.getElementById("text").value
+                .toLowerCase();
+
+            let vowels = 0;
+            let consonants = 0;
+
+            for (let char of text) {
+
+                if (/[a-z]/.test(char)) {
+
+                    if ("aeiou".includes(char)) {
+                        vowels++;
+                    } else {
+                        consonants++;
+                    }
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                "Vowels: " + vowels +
+                "<br>Consonants: " + consonants;
+        }
+    </script>
+
+</body>
+</html>

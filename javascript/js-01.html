@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 01 - Hello World</title>
+
+    <style>
+        body {
+            background: #071a32;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+        }
+
+        h1 {
+            color: #ffc107;
+        }
+
+        button {
+            background: #ffc107;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 25px;
+            color: #ffe082;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Program 01</h1>
+    <p>Display "Hello World"</p>
+
+    <button onclick="showMessage()">Run Program</button>
+
+    <div id="output"></div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("output").innerHTML = "Hello World";
+        }
+    </script>
+
+</body>
+</html>

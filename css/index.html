@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Programs | Devarshini Lakshmi Akshaya</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(0, 110, 255, 0.45),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(0, 70, 220, 0.35),
+                    transparent 38%
+                ),
+                linear-gradient(
+                    135deg,
+                    #061b4f 0%,
+                    #063a91 45%,
+                    #075ee8 100%
+                );
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 140, 255, 0.15);
+
+            filter: blur(100px);
+
+            top: -150px;
+            right: -100px;
+
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            background: rgba(30, 100, 255, 0.12);
+
+            filter: blur(100px);
+
+            bottom: -150px;
+            left: -100px;
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+
+            top: 20px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: calc(100% - 40px);
+            max-width: 1200px;
+
+            padding: 15px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(5, 35, 95, 0.65);
+
+            border: 1px solid rgba(120, 190, 255, 0.30);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25),
+                0 0 30px rgba(0, 100, 255, 0.12);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 12px;
+
+            background: rgba(20, 110, 255, 0.35);
+
+            border: 1px solid rgba(130, 200, 255, 0.40);
+
+            color: #8bc7ff;
+
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+
+            color: #dcecff;
+
+            padding: 9px 16px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(60, 150, 255, 0.25);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 72vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 150px 20px 80px;
+        }
+
+        .eyebrow {
+            color: #8fc9ff;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 11vw, 140px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            letter-spacing: -6px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #8bc7ff,
+                    #4ca1ff
+                );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 750px;
+
+            color: #c9e2ff;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: flex;
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 45px;
+        }
+
+        .stat {
+            min-width: 170px;
+
+            padding: 22px 28px;
+
+            background: rgba(15, 75, 160, 0.30);
+
+            border: 1px solid rgba(120, 190, 255, 0.25);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 18px;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-size: 28px;
+
+            color: white;
+        }
+
+        .stat span {
+            font-size: 12px;
+
+            color: #a9d3ff;
+
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           PROGRAM SECTION
+        ========================= */
+
+        .program-section {
+            width: min(1250px, calc(100% - 40px));
+
+            margin: auto;
+
+            padding: 50px 0 100px;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: #7fc1ff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(35px, 6vw, 65px);
+
+            margin-top: 10px;
+
+            font-weight: 800;
+        }
+
+        .section-heading p {
+            color: #b8d8ff;
+
+            margin-top: 10px;
+
+            max-width: 700px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CATEGORY
+        ========================= */
+
+        .category {
+            margin-bottom: 65px;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .category-title .line {
+            width: 45px;
+            height: 3px;
+
+            background: #55aaff;
+
+            border-radius: 10px;
+        }
+
+        .category-title h3 {
+            font-size: 24px;
+
+            color: #e5f3ff;
+        }
+
+        /* =========================
+           PROGRAM GRID
+        ========================= */
+
+        .program-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(285px, 1fr));
+
+            gap: 20px;
+        }
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
+            position: relative;
+
+            min-height: 255px;
+
+            padding: 27px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25, 105, 210, 0.38),
+                    rgba(5, 50, 125, 0.32)
+                );
+
+            border: 1px solid rgba(130, 200, 255, 0.30);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            border-radius: 50%;
+
+            background: rgba(50, 150, 255, 0.15);
+
+            filter: blur(35px);
+
+            top: -50px;
+            right: -40px;
+
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(130, 205, 255, 0.65);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.30),
+                0 0 35px rgba(30, 130, 255, 0.18);
+        }
+
+        .number {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #72b9ff;
+
+            letter-spacing: 2px;
+        }
+
+        .card h4 {
+            margin-top: 18px;
+
+            font-size: 18px;
+
+            line-height: 1.45;
+
+            color: white;
+        }
+
+        .open-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 25px;
+
+            width: fit-content;
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            background: rgba(30, 120, 255, 0.35);
+
+            border: 1px solid rgba(130, 200, 255, 0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .open-btn:hover {
+            background: rgba(50, 145, 255, 0.55);
+
+            border-color: #91ceff;
+
+            transform: translateX(4px);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            width: min(1100px, calc(100% - 40px));
+
+            margin: 30px auto 100px;
+
+            padding: 65px 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10, 75, 170, 0.45),
+                    rgba(20, 105, 220, 0.25)
+                );
+
+            border: 1px solid rgba(130, 200, 255, 0.30);
+
+            backdrop-filter: blur(18px);
+
+            border-radius: 30px;
+        }
+
+        .cta h2 {
+            font-size: clamp(30px, 5vw, 55px);
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #c0ddff;
+
+            margin-bottom: 30px;
+        }
+
+        .home-btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #0753bd;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #91bce8;
+
+            font-size: 13px;
+
+            border-top: 1px solid rgba(130, 200, 255, 0.15);
+        }
+
+        footer strong {
+            color: #d7ecff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 12px 15px;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links a {
+                padding: 8px 9px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            <div class="logo-icon">&lt;/&gt;</div>
+            DLA
+        </div>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../html/index.html">HTML</a>
+            <a href="index.html">CSS</a>
+            <a href="../javascript/index.html">JavaScript</a>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="eyebrow">
+            02 / PRESENTATION
+        </div>
+
+        <h1>CSS</h1>
+
+        <p>
+            Explore the complete collection of CSS programs covering
+            styling, layouts, animations, responsive design,
+            modern interfaces and advanced web development.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>270</strong>
+                <span>PROGRAMS</span>
+            </div>
+
+            <div class="stat">
+                <strong>CSS</strong>
+                <span>STYLING</span>
+            </div>
+
+            <div class="stat">
+                <strong>02</strong>
+                <span>LABORATORY</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRAMS
+    ========================= -->
+
+    <main class="program-section">
+
+        <div class="section-heading">
+
+            <span>CSS LABORATORY</span>
+
+            <h2>CSS Programs</h2>
+
+            <p>
+                270 CSS experiments from the practical assignment.
+                Select a program to view its implementation and source code.
+            </p>
+
+        </div>
+
+        <div id="programContainer"></div>
+
+    </main>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            270 Programs.<br>
+            One CSS Journey.
+        </h2>
+
+        <p>
+            Learn styling, layouts, animations and modern
+            web design through practical programs.
+        </p>
+
+        <a href="../index.html" class="home-btn">
+            ← Back to Home
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <strong>Devarshini Lakshmi Akshaya</strong>
+            · CSS Laboratory
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const programs = [
+
+            /* =========================
+               CSS FOUNDATION & CORE UI
+            ========================= */
+
+            [1, "Create a webpage using Inline, Internal, and External CSS."],
+
+            [2, "Create a webpage using Universal, Element, Class, ID, Attribute, and Grouping selectors."],
+
+            [3, "Create a webpage using Descendant, Child, Adjacent Sibling, and General Sibling selectors."],
+
+            [4, "Create a webpage using CSS colors for text, backgrounds, borders, and UI elements."],
+
+            [5, "Create a webpage using background images, background colors, background positioning, sizing, repeat, and attachment."],
+
+            [6, "Create a webpage using different CSS border styles, widths, colors, and border-radius properties."],
+
+            [7, "Create a webpage using Linear and Radial CSS gradients."],
+
+            [8, "Create a webpage using CSS font-family, font-size, font-weight, font-style, and font-variant properties."],
+
+            [9, "Create a webpage using CSS text alignment, decoration, transformation, indentation, spacing, and line-height."],
+
+            [10, "Create a webpage using the CSS box model with content, padding, border, and margin."],
+
+            [11, "Create a webpage using different width, height, min-width, max-width, min-height, and max-height properties."],
+
+            [12, "Create a webpage using the CSS box-sizing property with content-box and border-box."],
+
+            [13, "Create a webpage using CSS display properties such as block, inline, inline-block, flex, grid, and none."],
+
+            [14, "Create a webpage using CSS visibility and opacity properties."],
+
+            [15, "Create a webpage using CSS overflow, overflow-x, and overflow-y properties."],
+
+            [16, "Create a webpage using border-radius to create rounded cards, circles, pills, and custom shapes."],
+
+            [17, "Create a webpage using CSS box-shadow and text-shadow properties."],
+
+            [18, "Create a webpage using CSS variables and custom properties."],
+
+            [19, "Create a webpage using CSS inheritance, specificity, and the cascade."],
+
+            [20, "Create a webpage using CSS calc(), min(), max(), and clamp() functions."],
+
+            [21, "Create a webpage using static, relative, absolute, fixed, and sticky positioning."],
+
+            [22, "Create a webpage using z-index and CSS stacking order."],
+
+            [23, "Create a webpage using float and clear properties."],
+
+            [24, "Create a webpage using different CSS cursor styles and pointer interactions."],
+
+            [25, "Create a webpage using CSS outline and outline-offset properties."],
+
+            [26, "Create a webpage using CSS margin, padding, and spacing utilities."],
+
+            [27, "Create a webpage using CSS width and height percentages, viewport units, and rem units."],
+
+            [28, "Create a webpage using CSS em, rem, vw, vh, and percentage units."],
+
+            [29, "Create a webpage using CSS object-fit and object-position properties."],
+
+            [30, "Create a webpage using CSS filters such as blur, grayscale, brightness, contrast, and opacity."],
+
+            [31, "Create a webpage using CSS transitions for colors, sizes, shadows, and positions."],
+
+            [32, "Create a webpage using CSS 2D transformations such as rotate, scale, translate, and skew."],
+
+            [33, "Create a webpage using CSS 3D transformations and perspective effects."],
+
+            [34, "Create a webpage using CSS keyframe animations."],
+
+            [35, "Create a webpage using a CSS loading spinner and loading animation."],
+
+
+            /* =========================
+               SAAS UI COMPONENTS
+            ========================= */
+
+            [36, "Create a webpage for a SaaS navigation bar."],
+
+            [37, "Create a webpage for a SaaS sidebar navigation."],
+
+            [38, "Create a webpage for a responsive SaaS navigation menu."],
+
+            [39, "Create a webpage for a mobile sidebar navigation drawer."],
+
+            [40, "Create a webpage for a dropdown navigation menu."],
+
+            [41, "Create a webpage for a mega navigation menu."],
+
+            [42, "Create a webpage for a breadcrumb navigation component."],
+
+            [43, "Create a webpage for a tab navigation component."],
+
+            [44, "Create a webpage for a pill navigation component."],
+
+            [45, "Create a webpage for a pagination component."],
+
+            [46, "Create a webpage for a SaaS card component."],
+
+            [47, "Create a webpage for a profile card component."],
+
+            [48, "Create a webpage for a product card component."],
+
+            [49, "Create a webpage for a feature card component."],
+
+            [50, "Create a webpage for a pricing card component."],
+
+            [51, "Create a webpage for a SaaS statistics card component."],
+
+            [52, "Create a webpage for a KPI and metric card component."],
+
+            [53, "Create a webpage for a dashboard card component."],
+
+            [54, "Create a webpage for a notification card component."],
+
+            [55, "Create a webpage for an activity feed card component."],
+
+            [56, "Create a webpage for a testimonial card component."],
+
+            [57, "Create a webpage for a SaaS hero section."],
+
+            [58, "Create a webpage for a SaaS landing page header."],
+
+            [59, "Create a webpage for primary, secondary, outline, and destructive buttons."],
+
+            [60, "Create a webpage for icon buttons and action buttons."],
+
+            [61, "Create a webpage for badges, labels, tags, and chips."],
+
+            [62, "Create a webpage for user avatars and avatar groups."],
+
+            [63, "Create a webpage for dividers and section separators."],
+
+            [64, "Create a webpage for alert and notification components."],
+
+            [65, "Create a webpage for toast notification components."],
+
+            [66, "Create a webpage for tooltip components."],
+
+            [67, "Create a webpage for popover components."],
+
+            [68, "Create a webpage for modal and dialog components."],
+
+            [69, "Create a webpage for confirmation dialog components."],
+
+            [70, "Create a webpage for a drawer and slide-out panel."],
+
+            [71, "Create a webpage for a command palette interface."],
+
+            [72, "Create a webpage for an accordion component."],
+
+            [73, "Create a webpage for an empty-state component."],
+
+            [74, "Create a webpage for an error-state component."],
+
+            [75, "Create a webpage for a success-state component."],
+
+            [76, "Create a webpage for a loading-state component."],
+
+            [77, "Create a webpage for a skeleton-loading component."],
+
+            [78, "Create a webpage for a progress bar component."],
+
+            [79, "Create a webpage for a progress stepper component."],
+
+            [80, "Create a webpage for a timeline and activity history component."],
+
+            [81, "Create a webpage for a login form."],
+
+            [82, "Create a webpage for a signup form."],
+
+            [83, "Create a webpage for a forgot-password form."],
+
+            [84, "Create a webpage for a reset-password form."],
+
+            [85, "Create a webpage for a registration form."],
+
+            [86, "Create a webpage for a contact form."],
+
+            [87, "Create a webpage for a multi-step form."],
+
+            [88, "Create a webpage for form validation and error messages."],
+
+
+            /* =========================
+               MODERN SAAS / ANALYTICS /
+               AI / ML / RESPONSIVE UI
+            ========================= */
+
+            [89, "Create a webpage for a SaaS dashboard."],
+
+            [90, "Create a webpage for an admin dashboard."],
+
+            [91, "Create a webpage for an analytics dashboard."],
+
+            [92, "Create a webpage for a KPI analytics dashboard."],
+
+            [93, "Create a webpage for a revenue analytics dashboard."],
+
+            [94, "Create a webpage for a sales analytics dashboard."],
+
+            [95, "Create a webpage for user analytics."],
+
+            [96, "Create a webpage for customer analytics."],
+
+            [97, "Create a webpage for product analytics."],
+
+            [98, "Create a webpage for marketing analytics."],
+
+            [99, "Create a webpage for financial analytics."],
+
+            [100, "Create a webpage for real-time analytics."],
+
+            [101, "Create a webpage for SaaS usage analytics."],
+
+            [102, "Create a webpage for a conversion funnel dashboard."],
+
+            [103, "Create a webpage for a retention and cohort analytics dashboard."],
+
+            [104, "Create a webpage for a revenue chart dashboard."],
+
+            [105, "Create a webpage for a line chart analytics component."],
+
+            [106, "Create a webpage for a bar chart analytics component."],
+
+            [107, "Create a webpage for an area chart analytics component."],
+
+            [108, "Create a webpage for a pie and donut chart analytics component."],
+
+            [109, "Create a webpage for a heatmap analytics component."],
+
+            [110, "Create a webpage for data visualization cards."],
+
+            [111, "Create a webpage for an analytics date-range filter."],
+
+            [112, "Create a webpage for an analytics filter and sorting panel."],
+
+            [113, "Create a webpage for customizable dashboard widgets."],
+
+            [114, "Create a webpage for a customizable analytics dashboard."],
+
+            [115, "Create a webpage for an analytics report and export interface."],
+
+            [116, "Create a webpage for an AI assistant interface."],
+
+            [117, "Create a webpage for an AI chat interface."],
+
+            [118, "Create a webpage for an AI chat sidebar."],
+
+            [119, "Create a webpage for an AI command bar."],
+
+            [120, "Create a webpage for an AI-powered search interface."],
+
+            [121, "Create a webpage for AI search results."],
+
+            [122, "Create a webpage for an AI prompt input interface."],
+
+            [123, "Create a webpage for AI prompt suggestions."],
+
+            [124, "Create a webpage for an AI response card."],
+
+            [125, "Create a webpage for an AI-generated content card."],
+
+            [126, "Create a webpage for an AI summary card."],
+
+            [127, "Create a webpage for an AI recommendation card."],
+
+            [128, "Create a webpage for an AI insight card."],
+
+            [129, "Create a webpage for an AI copilot interface."],
+
+            [130, "Create a webpage for an AI autocomplete interface."],
+
+            [131, "Create a webpage for AI smart suggestions."],
+
+            [132, "Create a webpage for an AI content generator."],
+
+            [133, "Create a webpage for an AI document summarizer."],
+
+            [134, "Create a webpage for an AI data analysis interface."],
+
+            [135, "Create a webpage for a natural-language query interface."],
+
+            [136, "Create a webpage for an Ask Your Data interface."],
+
+            [137, "Create a webpage for a text-to-chart analytics interface."],
+
+            [138, "Create a webpage for an AI report generator."],
+
+            [139, "Create a webpage for an AI-powered analytics dashboard."],
+
+            [140, "Create a webpage for an AI prediction card."],
+
+            [141, "Create a webpage for an AI forecasting dashboard."],
+
+            [142, "Create a webpage for an anomaly detection dashboard."],
+
+            [143, "Create a webpage for an AI confidence score component."],
+
+            [144, "Create a webpage for an AI sources and citations component."],
+
+            [145, "Create a webpage for an AI explanation and reasoning interface."],
+
+            [146, "Create a webpage for an AI agent dashboard."],
+
+            [147, "Create a webpage for an AI agent list."],
+
+            [148, "Create a webpage for an AI agent profile."],
+
+            [149, "Create a webpage for AI agent status monitoring."],
+
+            [150, "Create a webpage for an AI agent task queue."],
+
+            [151, "Create a webpage for an AI agent activity log."],
+
+            [152, "Create a webpage for an AI agent execution history."],
+
+            [153, "Create a webpage for an AI agent execution timeline."],
+
+            [154, "Create a webpage for an AI agent workflow."],
+
+            [155, "Create a webpage for an AI agent builder."],
+
+            [156, "Create a webpage for AI agent configuration settings."],
+
+            [157, "Create a webpage for AI agent permissions management."],
+
+            [158, "Create a webpage for an AI agent approval interface."],
+
+            [159, "Create a webpage for a human-in-the-loop AI workflow."],
+
+            [160, "Create a webpage for an AI agent error and retry interface."],
+
+            [161, "Create a webpage for AI agent monitoring."],
+
+            [162, "Create a webpage for multi-agent workflow management."],
+
+            [163, "Create a webpage for an automation workflow builder."],
+
+            [164, "Create a webpage for a trigger and action workflow."],
+
+            [165, "Create a webpage for an ML prediction dashboard."],
+
+            [166, "Create a webpage for an ML forecast chart."],
+
+            [167, "Create a webpage for an ML probability score component."],
+
+            [168, "Create a webpage for an ML confidence score component."],
+
+            [169, "Create a webpage for an ML risk score dashboard."],
+
+            [170, "Create a webpage for a recommendation engine interface."],
+
+            [171, "Create a webpage for an ML anomaly alert."],
+
+            [172, "Create a webpage for an ML outlier detection interface."],
+
+            [173, "Create a webpage for an ML classification result."],
+
+            [174, "Create a webpage for an ML prediction comparison dashboard."],
+
+            [175, "Create a webpage for an ML model performance dashboard."],
+
+            [176, "Create a webpage for ML model metrics."],
+
+            [177, "Create a webpage for ML model version management."],
+
+            [178, "Create a webpage for ML model monitoring."],
+
+            [179, "Create a webpage for ML data drift monitoring."],
+
+            [180, "Create a webpage for ML feature importance visualization."],
+
+            [181, "Create a webpage for ML prediction explanation."],
+
+            [182, "Create a webpage for an ML experiment dashboard."],
+
+            [183, "Create a webpage for account settings."],
+
+            [184, "Create a webpage for profile settings."],
+
+            [185, "Create a webpage for team management."],
+
+            [186, "Create a webpage for user management."],
+
+            [187, "Create a webpage for role and permission management."],
+
+            [188, "Create a webpage for organization settings."],
+
+            [189, "Create a webpage for API key management."],
+
+            [190, "Create a webpage for API usage analytics."],
+
+            [191, "Create a webpage for integrations management."],
+
+            [192, "Create a webpage for webhook management."],
+
+            [193, "Create a webpage for developer settings."],
+
+            [194, "Create a webpage for security settings."],
+
+            [195, "Create a webpage for two-factor authentication settings."],
+
+            [196, "Create a webpage for active sessions and device management."],
+
+            [197, "Create a webpage for an audit log."],
+
+            [198, "Create a webpage for SaaS pricing plans."],
+
+            [199, "Create a webpage for pricing plan comparison."],
+
+            [200, "Create a webpage for subscription management."],
+
+            [201, "Create a webpage for subscription upgrade and downgrade."],
+
+            [202, "Create a webpage for a SaaS billing dashboard."],
+
+            [203, "Create a webpage for payment method management."],
+
+            [204, "Create a webpage for invoice management."],
+
+            [205, "Create a webpage for invoice details."],
+
+            [206, "Create a webpage for usage-based billing."],
+
+            [207, "Create a webpage for usage and consumption meters."],
+
+            [208, "Create a webpage for AI token and credit usage."],
+
+            [209, "Create a webpage for AI spending limits."],
+
+            [210, "Create a webpage for billing alerts."],
+
+            [211, "Create a webpage for a responsive Flexbox layout."],
+
+            [212, "Create a webpage for a responsive CSS Grid layout."],
+
+            [213, "Create a webpage for a responsive SaaS dashboard."],
+
+            [214, "Create a webpage for a responsive data table."],
+
+            [215, "Create a webpage for responsive SaaS cards."],
+
+            [216, "Create a webpage for a responsive SaaS form."],
+
+            [217, "Create a webpage for a responsive analytics dashboard."],
+
+            [218, "Create a webpage for responsive charts and data visualization."],
+
+            [219, "Create a webpage for a responsive pricing page."],
+
+            [220, "Create a webpage for a responsive login page."],
+
+            [221, "Create a webpage for a responsive signup page."],
+
+            [222, "Create a webpage for a mobile-first SaaS layout."],
+
+            [223, "Create a webpage for a mobile bottom navigation."],
+
+            [224, "Create a webpage for a sticky SaaS header."],
+
+            [225, "Create a webpage for a fixed SaaS sidebar."],
+
+            [226, "Create a webpage for a responsive SaaS footer."],
+
+            [227, "Create a webpage for a responsive photo and media gallery."],
+
+            [228, "Create a webpage for CSS hover effects and micro-interactions."],
+
+            [229, "Create a webpage for animated SaaS cards and components."],
+
+            [230, "Create a webpage for a CSS sliding card animation."],
+
+            [231, "Create a webpage for a CSS-only modal and popup interface."],
+
+            [232, "Create a webpage for a dark-mode SaaS interface using CSS variables."],
+
+            [233, "Create a webpage for a light and dark theme switcher."],
+
+            [234, "Create a webpage for responsive SaaS typography."],
+
+            [235, "Create a webpage for a glassmorphism SaaS interface."],
+
+            [236, "Create a webpage for a gradient-based SaaS interface."],
+
+            [237, "Create a webpage for a SaaS command palette with keyboard shortcuts."],
+
+            [238, "Create a webpage for an AI notification center."],
+
+            [239, "Create a webpage for a SaaS user profile menu."],
+
+            [240, "Create a webpage for a SaaS onboarding workflow."],
+
+            [241, "Create a webpage for a SaaS help and support interface."],
+
+            [242, "Create a webpage for a SaaS documentation interface."],
+
+            [243, "Create a webpage for a SaaS search and filter interface."],
+
+            [244, "Create a webpage for a SaaS calendar and scheduling interface."],
+
+            [245, "Create a webpage for a SaaS file management interface."],
+
+            [246, "Create a webpage for a SaaS collaboration and team workspace."],
+
+
+            /* =========================
+               FINAL SAAS WEBPAGE PROJECTS
+            ========================= */
+
+            [247, "Final SaaS Webpage Projects"],
+
+            [248, "Create a webpage for a complete SaaS landing page."],
+
+            [249, "Create a webpage for a SaaS login page."],
+
+            [250, "Create a webpage for a SaaS signup page."],
+
+            [251, "Create a webpage for a SaaS onboarding page."],
+
+            [252, "Create a webpage for a complete SaaS dashboard."],
+
+            [253, "Create a webpage for a complete analytics dashboard."],
+
+            [254, "Create a webpage for an AI-powered SaaS dashboard."],
+
+            [255, "Create a webpage for an AI agent management dashboard."],
+
+            [256, "Create a webpage for a SaaS user management system."],
+
+            [257, "Create a webpage for a SaaS team management system."],
+
+            [258, "Create a webpage for a SaaS account settings page."],
+
+            [259, "Create a webpage for a SaaS security settings page."],
+
+            [260, "Create a webpage for a SaaS integrations page."],
+
+            [261, "Create a webpage for a SaaS billing management page."],
+
+            [262, "Create a webpage for a SaaS pricing page."],
+
+            [263, "Create a webpage for a SaaS checkout page."],
+
+            [264, "Create a webpage for a SaaS invoice management page."],
+
+            [265, "Create a webpage for a SaaS help center."],
+
+            [266, "Create a webpage for a SaaS documentation website."],
+
+            [267, "Create a webpage for a SaaS blog and news website."],
+
+            [268, "Create a webpage for a SaaS 404 error page."],
+
+            [269, "Create a webpage for a SaaS 500 error page."],
+
+            [270, "Create a webpage for a complete responsive SaaS website using HTML5, CSS3, Flexbox, Grid, media queries, analytics, AI/ML interfaces, dashboards, and modern SaaS components."]
+
+        ];
+
+
+        /* =========================
+           CATEGORY FUNCTION
+        ========================= */
+
+        function getCategory(number) {
+
+            if (number <= 35) {
+                return "CSS Foundation & Core UI";
+            }
+
+            if (number <= 88) {
+                return "SaaS UI Components";
+            }
+
+            if (number <= 246) {
+                return "Modern SaaS, Analytics, AI/ML & Responsive UI";
+            }
+
+            return "Final SaaS Webpage Projects";
+        }
+
+
+        function getProgramPage(number) {
+            return `css-${String(number).padStart(2, "0")}.html`;
+        }
+
+
+        /* =========================
+           CREATE PROGRAM CARDS
+        ========================= */
+
+        const container =
+            document.getElementById("programContainer");
+
+        let currentCategory = "";
+
+
+        programs.forEach(([number, title]) => {
+
+            const category = getCategory(number);
+
+
+            if (category !== currentCategory) {
+
+                currentCategory = category;
+
+                const categorySection =
+                    document.createElement("section");
+
+                categorySection.className = "category";
+
+
+                const heading =
+                    document.createElement("div");
+
+                heading.className = "category-title";
+
+
+                heading.innerHTML = `
+                    <div class="line"></div>
+                    <h3>${category}</h3>
+                `;
+
+
+                const grid =
+                    document.createElement("div");
+
+                grid.className = "program-grid";
+
+                grid.id = `category-${number}`;
+
+
+                categorySection.appendChild(heading);
+
+                categorySection.appendChild(grid);
+
+                container.appendChild(categorySection);
+            }
+
+
+            const grid =
+                container.querySelector(
+                    `#category-${programs.find(
+                        item => getCategory(item[0]) === category
+                    )[0]}`
+                );
+
+
+            const card =
+                document.createElement("article");
+
+            card.className = "card";
+
+
+            const paddedNumber =
+                String(number).padStart(2, "0");
+
+
+            card.innerHTML = `
+
+                <div>
+
+                    <div class="number">
+                        CSS ${paddedNumber}
+                    </div>
+
+                    <h4>
+                        ${title}
+                    </h4>
+
+                </div>
+
+                ${
+                    number === 247
+
+                    ? `
+                        <a
+                            class="open-btn"
+                            href="#category-248"
+                        >
+                            Section →
+                        </a>
+                    `
+
+                    : `
+                        <a
+                            class="open-btn"
+                            href="${getProgramPage(number)}"
+                        >
+                            Open Program →
+                        </a>
+                    `
+                }
+
+            `;
+
+
+            grid.appendChild(card);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

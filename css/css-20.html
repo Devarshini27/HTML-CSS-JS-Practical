@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 20 - CSS Functions</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(0,110,255,.45), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0,70,220,.35), transparent 38%),
+        linear-gradient(135deg, #061b4f, #063a91, #075ee8);
+    padding: 100px 20px 50px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(15px);
+    padding: 12px 25px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    color: #70b7ff;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: clamp(35px, 6vw, 55px);
+    margin: 10px 0;
+}
+
+.card {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+.demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    padding: 30px 20px;
+    background: #1677ff;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.calc {
+    width: calc(100% - 40px);
+}
+
+.min {
+    width: min(100%, 400px);
+}
+
+.max {
+    width: max(200px, 50%);
+}
+
+.clamp {
+    font-size: clamp(18px, 4vw, 32px);
+}
+
+code {
+    color: #8dccff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #1677ff;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">CSS Programs</a>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="badge">CSS 20 / FUNCTIONS</div>
+        <h1>CSS Functions</h1>
+        <p>Using calc(), min(), max() and clamp().</p>
+    </div>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>To demonstrate CSS mathematical and responsive functions.</p>
+    </div>
+
+    <div class="card">
+        <h2>Working Output</h2>
+
+        <div class="demo">
+
+            <div class="box calc">
+                calc()
+            </div>
+
+            <div class="box min">
+                min()
+            </div>
+
+            <div class="box max">
+                max()
+            </div>
+
+            <div class="box clamp">
+                clamp()
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Source Code</h2>
+        <p><code>width: calc(100% - 40px);</code></p>
+        <p><code>width: min(100%, 400px);</code></p>
+        <p><code>width: max(200px, 50%);</code></p>
+        <p><code>font-size: clamp(18px, 4vw, 32px);</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Concepts</h2>
+        <p>calc(), min(), max(), clamp(), responsive sizing</p>
+    </div>
+
+    <a class="back" href="index.html">← Back to CSS Programs</a>
+
+</div>
+
+</body>
+</html>

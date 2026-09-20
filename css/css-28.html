@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 28 - CSS Measurement Units</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(0,110,255,.45), transparent 32%),
+        radial-gradient(circle at 85% 75%, rgba(0,70,220,.35), transparent 38%),
+        linear-gradient(135deg, #061b4f, #063a91, #075ee8);
+    padding: 100px 20px 50px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(15px);
+    padding: 12px 25px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    color: #70b7ff;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: 5vw;
+    margin: 10px 0;
+}
+
+.card {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 20px 0;
+}
+
+.units {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background: #1677ff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.em-box {
+    font-size: 1.2em;
+}
+
+.rem-box {
+    font-size: 1.5rem;
+}
+
+.vw-box {
+    width: 20vw;
+}
+
+.vh-box {
+    height: 20vh;
+}
+
+.percent-box {
+    width: 100%;
+}
+
+code {
+    color: #8dccff;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #1677ff;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">CSS Programs</a>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="badge">CSS 28 / UNITS</div>
+        <h1>CSS Measurement Units</h1>
+        <p>Using em, rem, vw, vh and percentage units.</p>
+    </div>
+
+    <div class="card">
+        <h2>Aim</h2>
+        <p>To demonstrate different CSS measurement units.</p>
+    </div>
+
+    <div class="card">
+        <h2>Working Output</h2>
+
+        <div class="units">
+            <div class="box em-box">1.2em</div>
+            <div class="box rem-box">1.5rem</div>
+            <div class="box vw-box">20vw</div>
+            <div class="box vh-box">20vh</div>
+            <div class="box percent-box">100%</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Source Code</h2>
+        <p><code>font-size: 1.2em;</code></p>
+        <p><code>font-size: 1.5rem;</code></p>
+        <p><code>width: 20vw;</code></p>
+        <p><code>height: 20vh;</code></p>
+        <p><code>width: 100%;</code></p>
+    </div>
+
+    <div class="card">
+        <h2>Concepts</h2>
+        <p>em, rem, vw, vh, percentage</p>
+    </div>
+
+    <a class="back" href="index.html">← Back to CSS Programs</a>
+
+</div>
+
+</body>
+</html>
